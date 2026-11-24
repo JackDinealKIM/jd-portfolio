@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JD STUDIO · 소상공인 원페이지 홈페이지 제작</title>
-<meta name="description" content="가게 하나에 홈페이지 하나. 카페·식당, 인테리어·설비, 학원·공방 원페이지 홈페이지를 9.9만 원부터 만듭니다. 상호와 사진, 메뉴만 주시면 이틀 안에 열립니다.">
+<title>JD STUDIO · 소상공인 홈페이지 제작 · SEO·AEO·GEO + 웹블로그</title>
+<meta name="description" content="가게 하나에 홈페이지 하나. 카페·식당, 인테리어·설비, 학원·공방 원페이지를 9.9만 원부터, 검색과 AI에 잡히는 구조와 웹블로그까지 29만 원부터 만듭니다. 상호와 사진, 메뉴만 주시면 문장과 구조를 함께 만듭니다.">
 <meta name="theme-color" content="#F2EFE9">
 <meta property="og:type" content="website">
-<meta property="og:title" content="JD STUDIO · 소상공인 원페이지 홈페이지 제작">
-<meta property="og:description" content="원페이지 9.9만 원부터. 세 업종 샘플을 직접 열어 볼 수 있습니다.">
+<meta property="og:title" content="JD STUDIO · 소상공인 홈페이지 제작 · SEO·AEO·GEO + 웹블로그">
+<meta property="og:description" content="원페이지 9.9만 원부터, 검색 노출 구조와 웹블로그까지 29만 원부터. 네 업종 샘플을 직접 열어 볼 수 있습니다.">
 <meta property="og:image" content="01-store-landing/assets/cafe-space.webp">
 <link rel="icon" href="01-store-landing/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="01-store-landing/assets/apple-touch-icon.png">
@@ -158,7 +158,7 @@ ul{margin:0;padding:0;list-style:none}
   .bar{grid-template-columns:auto 1fr;gap:8px;padding:8px 10px;top:8px}
   .bar__mail{display:none}
   .nav{justify-self:end;gap:0}
-  .nav a{padding:7px 8px;font-size:12px}
+  .nav a{padding:7px 6px;font-size:12px}
   .hero{grid-template-columns:1fr;padding-top:104px}
   .hero__text,.hero__media{grid-column:1/-1}
   .hero__media{margin-top:40px;margin-right:calc(var(--pad) * -1)}
@@ -177,12 +177,12 @@ ul{margin:0;padding:0;list-style:none}
   .work__shots{grid-template-columns:repeat(3,1fr);gap:12px}
   .shot:nth-child(1),.shot:nth-child(2),.shot:nth-child(3){margin-top:0}
   .work__main{margin-top:8px}
-  .rate__row{grid-template-columns:1fr auto;row-gap:4px}
-  .rate__no{grid-column:1/-1}
-  .rate__name{grid-column:1/2}
-  .rate__price{grid-column:2/3;align-self:start}
-  .rate__what{grid-column:1/-1}
-  .rate__days{grid-column:1/-1;text-align:left}
+  .rate__row{grid-template-columns:1fr auto;row-gap:2px}
+  .rate__no{grid-column:1/-1;order:1}
+  .rate__name{grid-column:1/2;order:2;align-self:center}
+  .rate__price{grid-column:2/3;order:2;align-self:center;text-align:right;font-size:14px}
+  .rate__what{grid-column:1/-1;order:3;margin-top:6px}
+  .rate__days{grid-column:1/-1;order:4;text-align:left;margin-top:4px}
   .steps{grid-template-columns:1fr}
   .step{grid-column:1/-1;margin-top:0!important}
   .contact__mail{font-size:20px}
@@ -203,6 +203,7 @@ ul{margin:0;padding:0;list-style:none}
   <nav class="nav" aria-label="페이지 안내">
     <a href="#work">작업</a>
     <a href="#invite">청첩장</a>
+    <a href="#webblog">웹블로그</a>
     <a href="#price">가격</a>
     <a href="#process">과정</a>
   </nav>
@@ -214,15 +215,15 @@ ul{margin:0;padding:0;list-style:none}
     <div class="hero__text">
       <p class="kicker">웹사이트 제작 · 구리 / 서울</p>
       <h1 class="display"><span>가게 하나에</span><span>홈페이지 <em>하나</em>.</span></h1>
-      <p class="lede">상호와 사진, 메뉴만 주시면 이틀 안에 열립니다. 템플릿에 이름만 바꿔 넣는 방식이 아니라, 업종에 맞는 문장과 사진, 동선을 함께 만듭니다.</p>
+      <p class="lede">상호와 사진, 메뉴만 주시면 이틀 안에 열립니다. 템플릿에 이름만 바꿔 넣는 방식이 아니라, 업종에 맞는 문장과 사진, 동선을 함께 만듭니다. 검색에 잡히고 AI가 인용하는 구조까지 필요하면 웹블로그 패키지로 붙입니다.</p>
       <div class="acts">
         <a class="btn" href="01-store-landing/">샘플 세 업종 보기<span class="btn__arw" aria-hidden="true">→</span></a>
-        <a class="link" href="mailto:mashiaro@naver.com">제작 문의</a>
+        <a class="link" href="03-seo-webblog/">SEO·웹블로그 샘플</a>
       </div>
       <ul class="facts">
-        <li><span class="k">시작가</span><span class="v">9.9만 원</span></li>
-        <li><span class="k">제작 기간</span><span class="v">1 ~ 2일</span></li>
-        <li><span class="k">수정</span><span class="v">1회 포함</span></li>
+        <li><span class="k">시작가</span><span class="v">99,000원</span></li>
+        <li><span class="k">검색·웹블로그</span><span class="v">290,000원~</span></li>
+        <li><span class="k">제작 기간</span><span class="v">1 ~ 5일</span></li>
       </ul>
     </div>
     <figure class="hero__media" data-rv>
@@ -307,10 +308,45 @@ ul{margin:0;padding:0;list-style:none}
     </div>
   </section>
 
-  <section class="sec" id="price">
+  <section class="sec" id="webblog">
     <header class="sec__head">
       <span class="sec__no">03</span>
-      <h2 class="sec__title">가격은 세 가지로만 받습니다.</h2>
+      <h2 class="sec__title">검색에 잡히고, AI가 인용하는 홈페이지.</h2>
+      <p class="sec__desc">세무사무소 샘플에 SEO·AEO·GEO와 웹문서 3편을 실제로 심었습니다. 구조화 데이터 5개, llms.txt, 사이트맵, 본문 3,700자. 상단의 진단 버튼을 누르면 이 페이지에 무엇이 들어갔는지 직접 볼 수 있습니다.</p>
+    </header>
+    <div class="work">
+      <div class="work__shots" data-rv>
+        <a class="shot" href="03-seo-webblog/">
+          <div class="shot__fig"><img src="03-seo-webblog/assets/img/office-hero.webp" alt="세무회계 사무소 샘플의 사무실 사진" loading="lazy"></div>
+          <span>TAX OFFICE</span>
+        </a>
+        <a class="shot" href="03-seo-webblog/#post-2">
+          <div class="shot__fig"><img src="03-seo-webblog/assets/img/consult.webp" alt="상담 장면을 담은 세무 칼럼 사진" loading="lazy"></div>
+          <span>COLUMN 02</span>
+        </a>
+        <a class="shot" href="03-seo-webblog/#post-1">
+          <div class="shot__fig"><img src="03-seo-webblog/assets/img/ledger-desk.webp" alt="장부와 만년필이 놓인 책상 사진" loading="lazy"></div>
+          <span>COLUMN 01</span>
+        </a>
+      </div>
+      <div class="work__main" data-rv>
+        <h3>SEO·AEO·GEO + 웹블로그 홈페이지</h3>
+        <p>검색엔진·AI 답변엔진·생성엔진을 함께 겨냥한 구조입니다. Schema.org 구조화 데이터(AccountingService·FAQPage·Article), llms.txt와 sitemap.xml, 질문에 먼저 답하는 본문, 그리고 실제로 읽히는 칼럼 3편. 사장님이 직접 누를 수 있는 “SEO·AEO 진단” 패널까지 포함해, 만든 뒤에 무엇이 들어갔는지 확인할 수 있습니다.</p>
+        <div class="work__links">
+          <a href="03-seo-webblog/"><span>03</span>샘플 열기</a>
+          <a href="03-seo-webblog/?insp=1"><span>SEO</span>진단 패널 열기</a>
+          <a href="03-seo-webblog/#post-1"><span>웹문서 1</span>매입세액 공제</a>
+          <a href="03-seo-webblog/#post-2"><span>웹문서 2</span>법인 전환</a>
+          <a href="03-seo-webblog/#post-3"><span>웹문서 3</span>첫해 기장</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="price">
+    <header class="sec__head">
+      <span class="sec__no">04</span>
+      <h2 class="sec__title">가격은 네 가지로 받습니다.</h2>
       <p class="sec__desc">부가세 포함 금액입니다. 도메인과 호스팅은 별도이고, 연 2만 원대면 충분합니다. 견적 전에 추가 비용을 먼저 알려 드립니다.</p>
     </header>
     <div class="rate">
@@ -323,32 +359,32 @@ ul{margin:0;padding:0;list-style:none}
       </div>
       <div class="rate__row" data-rv>
         <span class="rate__no">02</span>
-        <span class="rate__name">자동화 도구</span>
-        <span class="rate__what">블로그 글감 생성기, 엑셀 정리 툴, 예약 알림 같은 단일 기능 하나.</span>
-        <span class="rate__price">149,000원</span>
-        <span class="rate__days">2 ~ 3일</span>
-      </div>
-      <div class="rate__row" data-rv>
-        <span class="rate__no">03</span>
-        <span class="rate__name">업종 맞춤 패키지</span>
-        <span class="rate__what">홈페이지에 예약·지도·문의 연결까지. 네이버 플레이스와 문구를 맞춥니다.</span>
-        <span class="rate__price">249,000원</span>
-        <span class="rate__days">3 ~ 5일</span>
-      </div>
-      <div class="rate__row" data-rv>
-        <span class="rate__no">04</span>
         <span class="rate__name">모바일 청첩장</span>
         <span class="rate__what">세 템플릿 중 선택. 이름·사진·계좌·오시는 길 반영, 링크와 호스팅 1년 포함.</span>
         <span class="rate__price">10,000원</span>
         <span class="rate__days">1일</span>
       </div>
+      <div class="rate__row" data-rv>
+        <span class="rate__no">03</span>
+        <span class="rate__name">SEO·AEO·GEO + 웹블로그</span>
+        <span class="rate__what">검색 구조(구조화 데이터·llms.txt·사이트맵) + 칼럼 3편 + 진단 패널. 원페이지 위에 얹는 패키지.</span>
+        <span class="rate__price">290,000원~</span>
+        <span class="rate__days">3 ~ 5일</span>
+      </div>
+      <div class="rate__row" data-rv>
+        <span class="rate__no">04</span>
+        <span class="rate__name">대시보드 · 자동화 툴</span>
+        <span class="rate__what">매출·문의 조회 대시보드, 글감 생성기 같은 단일 기능. 카페24·스마트스토어 수정은 별도 견적.</span>
+        <span class="rate__price">149,000원~</span>
+        <span class="rate__days">2 ~ 3일</span>
+      </div>
     </div>
-    <p class="rate__note">사진 촬영과 로고 제작은 포함되지 않습니다. 필요하면 함께 견적에 넣어 드립니다.</p>
+    <p class="rate__note">사진 촬영과 로고 제작은 포함되지 않습니다. 필요하면 함께 견적에 넣어 드립니다. SEO 패키지는 검색 등록(사이트맵·서치콘솔) 안내까지 포함합니다.</p>
   </section>
 
   <section class="sec" id="process">
     <header class="sec__head">
-      <span class="sec__no">04</span>
+      <span class="sec__no">05</span>
       <h2 class="sec__title">사흘 안에 끝나는 순서.</h2>
       <p class="sec__desc">상담은 메일이나 카카오톡으로 하고, 초안은 링크로 보내 드립니다. 직접 만나지 않아도 됩니다.</p>
     </header>
