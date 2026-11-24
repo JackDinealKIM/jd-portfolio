@@ -1,12 +1,14 @@
 # jd-portfolio
 
-소상공인·자영업자를 위한 **원페이지 홈페이지 / 모바일 청첩장 / SEO·AEO·GEO + 웹블로그** 제작 포트폴리오입니다.
+소상공인·자영업자를 위한 **원페이지 홈페이지 / 모바일 청첩장 / SEO·AEO·GEO + 웹블로그 / 업무 자동화 툴** 제작 포트폴리오입니다.
 각 항목은 실제로 열리는 웹 페이지이며, 브라우저에서 바로 동작을 확인할 수 있습니다.
 
 - 라이브: https://jackdinealkim.github.io/jd-portfolio/
 - 샘플 01: https://jackdinealkim.github.io/jd-portfolio/01-store-landing/
 - 샘플 02: https://jackdinealkim.github.io/jd-portfolio/02-wedding-invite/
 - 샘플 03: https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/
+- 샘플 04: https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/
+- 견적서 예시 바로 열기: https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/?sample=interior
 - SEO 진단 패널: https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/?insp=1
 - 문의: mashiaro@naver.com
 
@@ -17,12 +19,15 @@
 | 01 | 업종별 원페이지 홈페이지 (3종) | 카페·식당 / 인테리어·설비 / 학원·공방. 상단 탭으로 상호·문장·메뉴·사진·강조색이 전환됩니다. | [`01-store-landing/`](01-store-landing/) |
 | 02 | 모바일 청첩장 (3종) | 클래식 레터 / 필름 에디토리얼 / 가든 보태니컬. 달력·D-day·갤러리·오시는 길·계좌 복사·공유 포함. | [`02-wedding-invite/`](02-wedding-invite/) |
 | 03 | SEO·AEO·GEO + 웹블로그 홈페이지 | 세무·절세 컨설팅 「윤슬 세무회계」. 구조화 데이터 5개(AccountingService·FAQPage·Article×3), llms.txt·sitemap.xml, 실제 칼럼 3편, 고객용 SEO·AEO 진단 패널. | [`03-seo-webblog/`](03-seo-webblog/) |
+| 04 | 1초 견적서 · A4 PDF 발급기 | 상호·품목을 입력하면 A4 견적서가 실시간으로 완성. 품목 행 추가/삭제, 부가세 별도·포함, 할인, 비고, 직인 PNG, 한글 금액 표기. 인쇄 시 A4 한 장만 출력되고 PDF로 저장됩니다. 업종 예시 3종(인테리어·디자인 외주·설비 시공). | [`04-quote-pdf/`](04-quote-pdf/) |
 
 업종별 직접 링크: [`?ind=cafe`](01-store-landing/?ind=cafe) · [`?ind=interior`](01-store-landing/?ind=interior) · [`?ind=clay`](01-store-landing/?ind=clay)
 
 청첩장 직접 링크: [`?tpl=classic`](02-wedding-invite/?tpl=classic) · [`?tpl=editorial`](02-wedding-invite/?tpl=editorial) · [`?tpl=garden`](02-wedding-invite/?tpl=garden)
 
 칼럼 직접 링크: [`#post-1`](03-seo-webblog/#post-1) 매입세액 공제 · [`#post-2`](03-seo-webblog/#post-2) 법인 전환 · [`#post-3`](03-seo-webblog/#post-3) 첫해 기장
+
+견적서 업종 예시: [`?sample=interior`](04-quote-pdf/?sample=interior) 인테리어 · [`?sample=design`](04-quote-pdf/?sample=design) 디자인 외주 · [`?sample=facility`](04-quote-pdf/?sample=facility) 설비 시공
 
 ## 가격
 
@@ -31,7 +36,7 @@
 | 01 | 원페이지 랜딩 | 한 장짜리 홈페이지, 수정 1회 포함 · 99,000원 | 1~2일 |
 | 02 | 모바일 청첩장 | 템플릿 3종 중 선택, 호스팅 1년 포함 · 10,000원 | 1일 |
 | 03 | SEO·AEO·GEO + 웹블로그 홈페이지 | 검색 구조(구조화 데이터·llms.txt·사이트맵) + 칼럼 3편 + 진단 패널 · 290,000원~ | 3~5일 |
-| 04 | 마케팅 대시보드 · 조회/자동화 툴 · 카페24 수정 | 대시보드·단일 기능 툴 149,000원~ / 카페24·스마트스토어 수정은 별도 견적 | 2~3일 |
+| 04 | 견적서·자동화 툴 | 견적서·거래명세서 발급기, 대시보드, 단일 기능 툴 · 149,000원~ | 2~3일 |
 
 ## 구성
 
@@ -61,6 +66,12 @@ jd-portfolio/
 │   ├── assets/
 │   │   ├── img/*.webp          # 실사 이미지 5장
 │   │   └── fonts/              # 한글 세리프·산세리프·모노 서브셋 (woff2)
+│   └── README.md
+├── 04-quote-pdf/
+│   ├── index.html              # 견적서 발급기 (입력 폼 · A4 미리보기 · 인쇄 CSS)
+│   ├── assets/
+│   │   ├── img/*.webp          # 책상 실사 1장 + 썸네일 3장
+│   │   └── fonts/              # Pretendard 한글 2종 · 세리프 서브셋 (woff2)
 │   └── README.md
 └── README.md
 ```
@@ -93,3 +104,4 @@ jd-portfolio/
 
 샘플에 쓰인 사진은 이미지 생성 도구로 만든 예시입니다. 실제 납품 시 매장 사진으로 교체합니다.
 03 샘플의 상호·인물·금액과 세법 서술은 예시이며, 실제 사무소가 아닙니다.
+04 견적서의 상호·사업자번호·금액도 예시입니다. 입력값은 서버로 전송되지 않고 브라우저(localStorage)에만 남습니다.

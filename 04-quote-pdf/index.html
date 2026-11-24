@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1초 견적서 · 사장님을 위한 A4 견적서 PDF 발급기</title>
+<meta name="description" content="상호와 품목만 넣으면 A4 견적서가 바로 완성됩니다. 부가세 별도·포함, 할인, 직인까지 반영해 인쇄하거나 PDF로 저장하세요. 설치도 회원가입도 없습니다.">
+<meta name="theme-color" content="#f8f7f4">
+<link rel="canonical" href="https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JD STUDIO">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="1초 견적서 · 사장님을 위한 A4 견적서 PDF 발급기">
+<meta property="og:description" content="엑셀도 한글도 필요 없습니다. 품목을 넣으면 A4 견적서 한 장이 바로 인쇄됩니다. 부가세·할인·직인까지.">
+<meta property="og:url" content="https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/">
+<meta property="og:image" content="https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/assets/img/desk.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon-64.png" sizes="64x64">
+<link rel="apple-touch-icon" href="assets/favicon-128.png">
+<link rel="preload" href="assets/fonts/sans-regular.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Pretendard";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/sans-regular.woff2") format("woff2")}
+@font-face{font-family:"Pretendard";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/sans-regular.woff2") format("woff2")}
+@font-face{font-family:"Pretendard";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/sans-semibold.woff2") format("woff2")}
+/* serif-subset */
+@font-face{font-family:"Doc Serif";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/serif-regular.woff2") format("woff2")}
+
+:root{
+  --paper:#f8f7f4;
+  --paper-2:#efece5;
+  --ink:#141413;
+  --ink-2:#3b3a35;
+  --muted:#767268;
+  --line:#d8d3c7;
+  --line-2:#e6e2d8;
+  --accent:#1e4d3b;
+  --accent-soft:#e7ede8;
+  --seal:#ab3527;
+  --sans:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
+  --serif:"Doc Serif","Noto Serif KR","Nanum Myeongjo",serif;
+  --mono:"SF Mono","IBM Plex Mono",ui-monospace,"Menlo",monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.62;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,figure,dl,dd,dt{margin:0}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:1.5px solid var(--accent);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--ink);color:var(--paper);padding:12px 16px}
+.skip:focus{left:16px;top:16px}
+
+/* ───────── bar ───────── */
+.bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:18px;height:57px;padding:0 clamp(16px,3vw,32px);background:rgba(248,247,244,.88);border-bottom:1px solid var(--line);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.bar__mark{display:flex;align-items:baseline;gap:7px;text-decoration:none;white-space:nowrap}
+.bar__mark b{font-family:var(--serif);font-weight:400;font-size:18px;letter-spacing:.03em}
+.bar__mark span{font-family:var(--mono);font-size:9px;letter-spacing:.22em;color:var(--muted)}
+.bar__div{width:1px;height:16px;background:var(--line)}
+.bar__name{font-size:13px;color:var(--ink-2);letter-spacing:.01em}
+.bar__no{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--muted);margin-left:14px}
+.bar__back{font-size:12px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:1px;margin-left:auto;white-space:nowrap}
+.bar__back:hover{color:var(--ink);border-color:var(--ink)}
+
+/* ───────── layout ───────── */
+.app{display:grid;grid-template-columns:minmax(0,436px) minmax(0,1fr);max-width:1580px;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:calc(100vh - 57px)}
+.panel{padding:38px clamp(20px,2.2vw,34px) 56px;border-right:1px solid var(--line);min-width:0}
+.stage{position:relative;padding:18px clamp(14px,2vw,28px) 28px;background:var(--paper-2);border-bottom:1px solid var(--line);min-width:0}
+.stage__inner{position:sticky;top:75px;display:flex;flex-direction:column;height:calc(100vh - 104px);min-height:420px}
+
+/* ───────── panel head ───────── */
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+.panel__head .eyebrow{margin-bottom:14px}
+.panel__title{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,38px);line-height:1.18;letter-spacing:-.02em}
+.panel__desc{margin-top:12px;font-size:13.5px;line-height:1.75;color:var(--ink-2);max-width:38ch}
+.samples{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.samples__lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--muted);margin-right:2px}
+.samples button{position:relative;padding:3px 1px;font-size:12.5px;color:var(--ink-2);border-bottom:1px solid var(--line);transition:color .25s var(--ease),border-color .25s var(--ease)}
+.samples button span{font-family:var(--mono);font-size:9px;color:var(--muted);margin-right:4px}
+.samples button:hover{color:var(--accent);border-color:var(--accent)}
+.samples button[aria-pressed="true"]{color:var(--accent);border-color:var(--accent)}
+.samples__note{margin-top:8px;font-size:11px;line-height:1.55;color:var(--muted)}
+
+/* ───────── form ───────── */
+.form{margin-top:26px}
+.set{padding-top:20px;margin-top:20px;border-top:1px solid var(--line-2)}
+.set:first-child{border-top:0;margin-top:0;padding-top:0}
+.set__head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+.set__no{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--accent)}
+.set__title{font-size:13px;font-weight:600;letter-spacing:.01em}
+.set__hint{margin-left:auto;font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field--wide{grid-column:1/-1}
+.flabel{font-size:11px;color:var(--muted);letter-spacing:.02em}
+.in{width:100%;padding:6px 0;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;font-size:13.5px;line-height:1.4;transition:border-color .2s var(--ease)}
+.in::placeholder{color:#a9a49a}
+input[data-field="quoteDate"],input[data-field="validUntil"]{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em}
+.in:hover{border-color:#bfb8a9}
+.in:focus{outline:0;border-color:var(--accent)}
+textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
+.in[type="date"]{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em}
+.in[type="date"]::-webkit-calendar-picker-indicator{opacity:.45;cursor:pointer}
+.in[type="date"]::-webkit-calendar-picker-indicator{opacity:.45;cursor:pointer}
+
+/* items */
+.items{display:flex;flex-direction:column}
+.item{padding:12px 0 11px;border-bottom:1px solid var(--line-2)}
+.item:first-child{border-top:1px solid var(--line-2)}
+.item__head{display:flex;align-items:center;gap:8px}
+.item__no{font-family:var(--mono);font-size:9.5px;color:var(--muted);width:18px;flex:none}
+.item__name{flex:1;font-weight:500}
+.item__del{flex:none;width:22px;height:22px;display:grid;place-items:center;color:#a9a49a;font-size:17px;line-height:1;border-radius:50%;transition:color .2s,background .2s}
+.item__del:hover{color:var(--seal);background:#f3eceb}
+.item__grid{display:grid;grid-template-columns:1fr 64px 96px 84px;gap:8px;margin-top:6px;padding-left:26px}
+.item__grid .field{gap:2px}
+.item__grid .flabel{font-size:10px}
+.item__grid .in{font-size:12.5px;padding:3px 0;font-variant-numeric:tabular-nums}
+.item__amt{font-size:12.5px;padding:3px 0;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2);border-bottom:1px solid transparent;white-space:nowrap}
+.item__amt.is-zero{color:#a9a49a}
+.linkbtn{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12.5px;color:var(--accent);border-bottom:1px solid rgba(30,77,59,.28);padding-bottom:1px}
+.linkbtn:hover{border-color:var(--accent)}
+.linkbtn span{font-family:var(--mono);font-size:13px;line-height:1}
+
+/* vat toggle */
+.seg{display:inline-flex;border:1px solid var(--line);background:#fff}
+.seg button{padding:6px 14px;font-size:12.5px;color:var(--muted);border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.seg button:hover:not([aria-pressed="true"]){color:var(--ink)}
+.row-inline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hint{font-size:11.5px;color:var(--muted);line-height:1.5}
+
+/* seal */
+.seal-ctl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:2px}
+.cbx{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2);cursor:pointer}
+.cbx input{width:13px;height:13px;accent-color:var(--accent);margin:0}
+.filebtn{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border:1px solid var(--line);font-size:12px;color:var(--ink-2);cursor:pointer;transition:border-color .2s,color .2s}
+.filebtn:hover{border-color:var(--ink);color:var(--ink)}
+.mini{font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:1px}
+.mini:hover{color:var(--ink)}
+.seal-note{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5}
+
+/* actions */
+.actions{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;background:var(--ink);color:var(--paper);font-size:13.5px;font-weight:600;letter-spacing:.01em;transition:background .25s var(--ease),transform .25s var(--ease)}
+.btn:hover{background:var(--accent)}
+.btn:active{transform:translateY(1px)}
+.btn__k{font-family:var(--mono);font-size:10px;opacity:.6;font-weight:400;letter-spacing:.04em}
+.btn--ghost{background:none;color:var(--ink-2);border:1px solid var(--line)}
+.btn--ghost:hover{background:none;color:var(--ink);border-color:var(--ink)}
+.tip{margin-top:14px;font-size:11.5px;color:var(--muted);line-height:1.6;max-width:42ch}
+.tip b{font-weight:500;color:var(--ink-2)}
+
+/* ───────── stage ───────── */
+.stage__bar{display:flex;align-items:center;gap:12px;padding:0 2px 12px;flex:none}
+.stage__size{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--muted)}
+.stage__zoom{margin-left:auto;display:flex;align-items:center;gap:10px}
+.stage__pct{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em}
+.zoombtn{font-size:11.5px;color:var(--ink-2);border-bottom:1px solid var(--line);padding-bottom:1px}
+.zoombtn:hover{color:var(--accent);border-color:var(--accent)}
+.sheet-wrap{flex:1;display:flex;justify-content:center;align-items:flex-start;overflow:auto;min-height:0;min-width:0;width:100%;max-width:100%}
+.sheet-wrap.is-zoom{justify-content:flex-start;padding-bottom:12px;max-height:calc(100vh - 180px)}
+.sheet-scaler{position:relative;flex:none}
+
+/* ───────── the sheet ───────── */
+.sheet{position:absolute;top:0;left:0;transform-origin:top left;width:210mm;height:297mm;padding:15mm 16mm 12mm;background:#fff;color:#141413;font-family:var(--sans);font-size:9.1pt;line-height:1.5;box-shadow:0 1px 1px rgba(20,20,19,.05),0 28px 60px -30px rgba(20,20,19,.34);display:flex;flex-direction:column;overflow:hidden}
+.sheet b{font-weight:600}
+
+.doc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12mm;padding-bottom:5mm;border-bottom:1.4pt solid #141413}
+.doc-head__title{flex:none}
+.doc-head__en{font-family:var(--mono);font-size:6.6pt;letter-spacing:.34em;color:#767268;text-transform:uppercase}
+.doc-head h1{font-family:var(--serif);font-weight:400;font-size:27pt;line-height:1;letter-spacing:.24em;margin-top:3mm}
+.doc-meta{font-size:8.1pt;border-collapse:collapse;min-width:64mm}
+.doc-meta th{font-weight:400;color:#767268;text-align:left;padding:1.1mm 0 1.1mm 0;width:18mm;white-space:nowrap}
+.doc-meta td{text-align:right;padding:1.1mm 0;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.doc-meta tr+tr th,.doc-meta tr+tr td{border-top:.4pt solid #e6e2d8}
+
+.doc-lead{margin:5.5mm 0 4mm;font-size:8.8pt;color:#3b3a35;letter-spacing:.01em}
+
+.parties{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.party{position:relative;border:.6pt solid #d8d3c7;padding:4mm 4mm 3.4mm;min-height:36mm}
+.party__lab{display:flex;align-items:baseline;gap:2.5mm;margin-bottom:2.4mm}
+.party__lab b{font-size:7.4pt;letter-spacing:.16em;color:#1e4d3b;font-weight:600}
+.party__lab em{font-family:var(--mono);font-style:normal;font-size:5.8pt;letter-spacing:.2em;color:#a9a49a}
+.party__name{font-size:11.5pt;font-weight:600;line-height:1.25;letter-spacing:-.01em;padding-right:18mm;min-height:5mm}
+.party__meta{margin-top:2.2mm;display:grid;grid-template-columns:auto 1fr;gap:.9mm 3mm;font-size:7.6pt;line-height:1.45}
+.party__meta dt{color:#8b877d;white-space:nowrap}
+.party__meta dd{color:#2c2b27;min-width:0}
+.party--client .party__name{padding-right:0}
+
+.seal{position:absolute;right:4mm;bottom:3.6mm;width:15mm;height:15mm;display:grid;place-items:center;border:1.5pt solid #ab3527;color:#ab3527;background:#fff}
+.seal span{writing-mode:vertical-rl;text-orientation:upright;font-family:var(--serif);font-size:8.4pt;letter-spacing:.16em;line-height:1.15;max-height:12mm;overflow:hidden}
+.seal img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.seal[hidden]{display:none}
+
+.items-tbl{width:100%;border-collapse:collapse;margin-top:6mm;table-layout:fixed;font-size:8.4pt}
+.items-tbl col.c-no{width:9mm}
+.items-tbl col.c-spec{width:30mm}
+.items-tbl col.c-qty{width:13mm}
+.items-tbl col.c-price{width:26mm}
+.items-tbl col.c-amt{width:27mm}
+.items-tbl thead th{padding:2mm 1.6mm;background:#f4f2eb;border-top:1pt solid #141413;border-bottom:.6pt solid #141413;font-size:7pt;font-weight:600;letter-spacing:.08em;color:#3b3a35;text-align:left}
+.items-tbl thead th.r{text-align:right}
+.items-tbl tbody td{padding:2mm 1.6mm;border-bottom:.4pt solid #e0dbcf;height:8.4mm;vertical-align:middle}
+.items-tbl tbody td.r{text-align:right;font-variant-numeric:tabular-nums}
+.items-tbl tbody td.c{text-align:center;font-variant-numeric:tabular-nums}
+.items-tbl tbody td.name{font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.items-tbl tbody td.spec{color:#5b5850;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.items-tbl tbody tr.is-empty td{color:transparent}
+
+.totals{display:grid;grid-template-columns:1fr 66mm;gap:6mm;margin-top:4.5mm;align-items:stretch}
+.totals__words{border:.6pt solid #d8d3c7;padding:3.2mm 4mm;display:flex;flex-direction:column;justify-content:center;gap:1mm}
+.totals__words .lab{font-size:7pt;letter-spacing:.16em;color:#8b877d}
+.totals__words .val{font-size:9.6pt;letter-spacing:.01em}
+.totals__words .val b{font-weight:600}
+.totals__words .sub{font-size:7pt;color:#8b877d}
+.totals__tbl{font-size:8.4pt;border-collapse:collapse;width:100%}
+.totals__tbl th{font-weight:400;color:#5b5850;text-align:left;padding:1.5mm 0;border-bottom:.4pt solid #e6e2d8}
+.totals__tbl td{text-align:right;padding:1.5mm 0;border-bottom:.4pt solid #e6e2d8;font-variant-numeric:tabular-nums}
+.totals__tbl tr.disc th,.totals__tbl tr.disc td{color:#8b6a5f}
+.totals__tbl tr.sum th,.totals__tbl tr.sum td{border-bottom:1.2pt solid #141413;padding-top:2.4mm;padding-bottom:2.4mm;font-size:10pt;font-weight:600;color:#141413}
+.totals__tbl tr.sum td{font-size:12pt}
+
+.note{margin-top:5mm;border-top:.6pt solid #d8d3c7;padding-top:3mm;font-size:8pt;color:#3b3a35;line-height:1.6;min-height:14mm}
+.note h2{font-size:7pt;letter-spacing:.16em;color:#1e4d3b;font-weight:600;margin-bottom:1.4mm}
+.note p{white-space:pre-wrap}
+
+.doc-note-line{margin-top:auto;padding-top:4mm;font-size:6.8pt;color:#8b877d;letter-spacing:.01em}
+.doc-foot{padding-top:3mm;display:flex;justify-content:space-between;align-items:flex-end;gap:8mm;font-size:7.8pt;color:#5b5850}
+.doc-foot .say{font-size:8pt;color:#3b3a35}
+.doc-foot .date{margin-top:1mm;font-family:var(--mono);font-size:8pt;letter-spacing:.06em;color:#141413}
+.doc-foot .issuer{text-align:right;line-height:1.35}
+.doc-foot .issuer b{font-size:10pt;letter-spacing:.02em}
+.doc-foot .issuer span{display:block;font-size:7.4pt;color:#767268;margin-top:.8mm}
+
+/* ───────── outreach ───────── */
+.outreach{max-width:1580px;margin:0 auto;padding:clamp(44px,6vw,84px) clamp(20px,3vw,32px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,64px);align-items:center;border-top:1px solid var(--line);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.outreach__fig{position:relative;overflow:hidden;background:#e3ded2;aspect-ratio:16/11}
+.outreach__fig img{width:100%;height:100%;object-fit:cover}
+.outreach__cap{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:#f3f0e7;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.outreach h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.8vw,34px);line-height:1.28;letter-spacing:-.02em;margin-top:14px}
+.outreach p{margin-top:14px;font-size:14px;line-height:1.85;color:var(--ink-2);max-width:44ch}
+.outreach__price{display:flex;align-items:baseline;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.outreach__price b{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em;color:var(--accent)}
+.outreach__price span{font-size:12px;color:var(--muted)}
+.outreach__list{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column}
+.outreach__list li{display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line-2);font-size:12.5px;color:var(--ink-2)}
+.outreach__list li:last-child{border-bottom:1px solid var(--line-2)}
+.outreach__list i{font-family:var(--mono);font-style:normal;font-size:9px;color:var(--muted);padding-top:3px}
+.outreach__cta{display:flex;align-items:center;gap:18px;margin-top:24px;flex-wrap:wrap}
+.outreach__mail{font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.outreach__mail:hover{color:var(--accent);border-color:var(--accent)}
+.outreach__dm{font-size:12.5px;color:var(--muted)}
+
+.foot{max-width:1580px;margin:0 auto;padding:22px clamp(20px,3vw,32px) 34px;display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-between;border-left:1px solid var(--line);border-right:1px solid var(--line);font-size:11px;color:var(--muted)}
+.foot a{text-decoration:none;border-bottom:1px solid var(--line-2)}
+.foot a:hover{color:var(--ink)}
+
+.noscript{margin:20px;padding:16px;border:1px solid var(--line);font-size:13px}
+
+.mobar{display:none}
+
+/* ───────── mobile ───────── */
+@media (max-width:980px){
+  .app{grid-template-columns:1fr;border-left:0;border-right:0}
+  .panel{border-right:0;padding-bottom:34px}
+  .stage{padding:14px 12px 26px;border-top:1px solid var(--line)}
+  .stage__inner{position:static;height:auto;min-height:0}
+  .sheet-wrap{margin-top:6px}
+  .sheet-wrap.is-zoom{max-height:70vh}
+  .btn__k{display:none}
+  .outreach{grid-template-columns:1fr;border-left:0;border-right:0;padding-top:40px}
+  .outreach__fig{order:2;margin-top:8px}
+  .foot{border-left:0;border-right:0;padding-bottom:96px}
+  .mobar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(248,247,244,.95);border-top:1px solid var(--line);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+  .mobar button{flex:1;padding:12px 8px;font-size:13.5px;font-weight:600;border:1px solid var(--line);background:#fff}
+  .mobar .mobar__print{flex:1.5;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+}
+@media (max-width:520px){
+  .bar__name,.bar__div{display:none}
+  .grid{grid-template-columns:1fr}
+  .item__grid{grid-template-columns:1fr 56px 86px 74px;padding-left:0}
+  .panel{padding:28px 18px 30px}
+  .panel__title{font-size:29px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}
+
+/* ───────── print ───────── */
+@media print{
+  @page{size:A4;margin:0}
+  html,body{background:#fff!important;margin:0!important;padding:0!important;width:210mm}
+  .bar,.panel,.outreach,.foot,.stage__bar,.skip,.noscript,.mobar{display:none!important}
+  .app{display:block!important;max-width:none;margin:0;padding:0;border:0;min-height:0}
+  .stage{padding:0!important;border:0!important;background:#fff!important;display:block}
+  .stage__inner{position:static!important;display:block!important;height:auto!important;min-height:0!important}
+  .sheet-wrap{display:block!important;overflow:visible!important;height:auto!important;padding:0!important;margin:0!important}
+  .sheet-scaler{width:auto!important;height:auto!important;position:static!important}
+  .sheet{position:static!important;transform:none!important;box-shadow:none!important;width:210mm;height:296.8mm;margin:0;padding:15mm 16mm 12mm;overflow:hidden;break-inside:avoid;page-break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#panel">입력란으로 건너뛰기</a>
+
+<header class="bar">
+  <a class="bar__mark" href="https://jackdinealkim.github.io/jd-portfolio/"><b>JD</b><span>STUDIO</span></a>
+  <span class="bar__div" aria-hidden="true"></span>
+  <span class="bar__name">1초 견적서</span>
+  <a class="bar__back" href="https://jackdinealkim.github.io/jd-portfolio/">작업 목록</a>
+  <span class="bar__no">NO.04 / QUOTATION</span>
+</header>
+
+<main class="app">
+  <section class="panel" id="panel" aria-label="견적서 입력">
+    <header class="panel__head">
+      <p class="eyebrow">Quotation builder</p>
+      <h1 class="panel__title">견적서 한 장,<br>1분.</h1>
+      <p class="panel__desc">상호와 품목만 넣으면 A4 견적서가 바로 완성됩니다. 오른쪽 종이를 확인하고 인쇄 대화상자에서 PDF로 저장하세요. 설치도, 회원가입도 없습니다.</p>
+      <div class="samples" role="group" aria-label="예시 데이터로 채우기">
+        <span class="samples__lab">예시로 채우기</span>
+        <button type="button" data-sample="interior"><span>01</span>인테리어</button>
+        <button type="button" data-sample="design"><span>02</span>디자인 외주</button>
+        <button type="button" data-sample="facility"><span>03</span>설비 시공</button>
+      </div>
+      <p class="samples__note">칸을 눌러 바로 고칠 수 있습니다. 입력한 내용은 이 브라우저에만 저장됩니다.</p>
+    </header>
+
+    <form class="form" id="quoteForm" autocomplete="off" novalidate>
+      <section class="set">
+        <div class="set__head"><span class="set__no">01</span><h2 class="set__title">공급자</h2><span class="set__hint">내 사업자 정보</span></div>
+        <div class="grid">
+          <label class="field field--wide"><span class="flabel">상호</span><input class="in" data-field="supplierName" placeholder="정도인테리어"></label>
+          <label class="field"><span class="flabel">대표자</span><input class="in" data-field="supplierOwner" placeholder="김성도"></label>
+          <label class="field"><span class="flabel">사업자등록번호</span><input class="in" data-field="supplierBizno" inputmode="numeric" placeholder="000-00-00000"></label>
+          <label class="field field--wide"><span class="flabel">주소</span><input class="in" data-field="supplierAddr" placeholder="경기도 구리시 인창동"></label>
+          <label class="field"><span class="flabel">연락처</span><input class="in" data-field="supplierTel" inputmode="tel" placeholder="010-0000-0000"></label>
+          <label class="field"><span class="flabel">이메일</span><input class="in" data-field="supplierEmail" inputmode="email" placeholder="name@example.com"></label>
+        </div>
+      </section>
+
+      <section class="set">
+        <div class="set__head"><span class="set__no">02</span><h2 class="set__title">공급받는자</h2><span class="set__hint">견적을 받는 곳</span></div>
+        <div class="grid">
+          <label class="field field--wide"><span class="flabel">상호 · 이름</span><input class="in" data-field="clientName" placeholder="한결어린이집"></label>
+          <label class="field"><span class="flabel">담당자</span><input class="in" data-field="clientOwner" placeholder="박선영"></label>
+          <label class="field"><span class="flabel">연락처</span><input class="in" data-field="clientTel" inputmode="tel" placeholder="010-0000-0000"></label>
+          <label class="field field--wide"><span class="flabel">주소</span><input class="in" data-field="clientAddr" placeholder="경기도 구리시 인창동"></label>
+        </div>
+      </section>
+
+      <section class="set">
+        <div class="set__head"><span class="set__no">03</span><h2 class="set__title">견적 정보</h2></div>
+        <div class="grid">
+          <label class="field field--wide"><span class="flabel">견적번호</span><input class="in" data-field="quoteNo" placeholder="Q-2026-1125-01"></label>
+          <label class="field"><span class="flabel">견적일</span><input class="in" data-field="quoteDate" inputmode="numeric" placeholder="2026-11-25" aria-label="견적일 (연-월-일)"></label>
+          <label class="field"><span class="flabel">유효기간</span><input class="in" data-field="validUntil" inputmode="numeric" placeholder="2026-12-25" aria-label="유효기간 (연-월-일)"></label>
+        </div>
+      </section>
+
+      <section class="set">
+        <div class="set__head"><span class="set__no">04</span><h2 class="set__title">품목</h2><span class="set__hint" id="itemCount">1 / 8줄</span></div>
+        <div class="items" id="itemList"></div>
+        <button type="button" class="linkbtn" id="addItem"><span>+</span>품목 추가</button>
+      </section>
+
+      <section class="set">
+        <div class="set__head"><span class="set__no">05</span><h2 class="set__title">정산</h2></div>
+        <div class="row-inline">
+          <div class="seg" role="group" aria-label="부가세 방식">
+            <button type="button" data-vat="separate" aria-pressed="true">부가세 별도</button>
+            <button type="button" data-vat="included" aria-pressed="false">부가세 포함</button>
+          </div>
+          <label class="field" style="width:132px"><span class="flabel">할인 (원)</span><input class="in" id="discount" inputmode="numeric" placeholder="0"></label>
+        </div>
+        <p class="hint" id="settleHint" style="margin-top:10px">품목 합계에 10%를 더해 청구합니다.</p>
+      </section>
+
+      <section class="set">
+        <div class="set__head"><span class="set__no">06</span><h2 class="set__title">비고 · 직인</h2></div>
+        <div class="grid">
+          <label class="field field--wide"><span class="flabel">비고</span><textarea class="in" data-field="note" rows="3" placeholder="결제 조건, 작업 범위, 유효기간 안내 등"></textarea></label>
+        </div>
+        <div class="seal-ctl" style="margin-top:14px">
+          <label class="cbx"><input type="checkbox" id="sealOn" checked> 기본 직인 표시</label>
+          <label class="filebtn">직인 PNG 올리기<input type="file" id="sealFile" accept="image/png,image/jpeg" hidden></label>
+          <button type="button" class="mini" id="sealClear" hidden>이미지 지우기</button>
+        </div>
+        <p class="seal-note">직인은 대표자 성명으로 그려집니다. 실제 도장 이미지(PNG)를 올리면 그 이미지가 인쇄됩니다.</p>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="btn" data-print>PDF 저장 / 인쇄 <span class="btn__k">Ctrl P</span></button>
+        <button type="button" class="btn btn--ghost" id="resetBtn">초기화</button>
+      </div>
+      <p class="tip"><b>인쇄 팁</b> — 대화상자에서 용지 A4, 여백 없음, <b>배경 그래픽</b>을 켜면 표 머리색과 직인이 그대로 나옵니다. ‘PDF로 저장’을 고르면 파일로 받을 수 있습니다.</p>
+    </form>
+  </section>
+
+  <section class="stage" aria-label="견적서 미리보기">
+    <div class="stage__inner">
+      <div class="stage__bar">
+        <span class="stage__size">A4 · 210 × 297 MM</span>
+        <div class="stage__zoom">
+          <span class="stage__pct" id="zoomPct">100%</span>
+          <button type="button" class="zoombtn" id="zoomToggle">원본 크기</button>
+        </div>
+      </div>
+      <div class="sheet-wrap" id="sheetWrap">
+        <div class="sheet-scaler" id="sheetScaler">
+          <article class="sheet" id="sheet" aria-label="A4 견적서 미리보기">
+            <header class="doc-head">
+              <div class="doc-head__title">
+                <p class="doc-head__en">Quotation</p>
+                <h1>견적서</h1>
+              </div>
+              <table class="doc-meta">
+                <tr><th>견적번호</th><td data-out="quoteNo">—</td></tr>
+                <tr><th>견적일</th><td data-out="quoteDate">—</td></tr>
+                <tr><th>유효기간</th><td data-out="validUntil">—</td></tr>
+              </table>
+            </header>
+
+            <p class="doc-lead">아래와 같이 견적합니다.</p>
+
+            <div class="parties">
+              <section class="party">
+                <div class="party__lab"><b>공급자</b><em>SUPPLIER</em></div>
+                <p class="party__name" data-out="supplierName">—</p>
+                <dl class="party__meta">
+                  <dt>대표</dt><dd data-out="supplierOwner">—</dd>
+                  <dt>사업자번호</dt><dd data-out="supplierBizno">—</dd>
+                  <dt>주소</dt><dd data-out="supplierAddr">—</dd>
+                  <dt>연락처</dt><dd data-out="supplierTel">—</dd>
+                  <dt>이메일</dt><dd data-out="supplierEmail">—</dd>
+                </dl>
+                <div class="seal" id="seal"><span id="sealText">—</span><img id="sealImg" alt="" hidden></div>
+              </section>
+              <section class="party party--client">
+                <div class="party__lab"><b>공급받는자</b><em>CLIENT</em></div>
+                <p class="party__name" data-out="clientName">—</p>
+                <dl class="party__meta">
+                  <dt>담당</dt><dd data-out="clientOwner">—</dd>
+                  <dt>주소</dt><dd data-out="clientAddr">—</dd>
+                  <dt>연락처</dt><dd data-out="clientTel">—</dd>
+                </dl>
+              </section>
+            </div>
+
+            <table class="items-tbl">
+              <colgroup>
+                <col class="c-no"><col><col class="c-spec"><col class="c-qty"><col class="c-price"><col class="c-amt">
+              </colgroup>
+              <thead>
+                <tr><th>NO</th><th>품목</th><th>규격</th><th class="r">수량</th><th class="r">단가</th><th class="r">금액</th></tr>
+              </thead>
+              <tbody id="sheetItems"></tbody>
+            </table>
+
+            <div class="totals">
+              <div class="totals__words">
+                <span class="lab">합계 금액</span>
+                <span class="val">일금 <b id="amountWords">영</b>원정</span>
+                <span class="sub">부가세 포함 금액입니다</span>
+              </div>
+              <table class="totals__tbl">
+                <tr class="disc" id="discRow" hidden><th>할인</th><td id="tDiscount">0</td></tr>
+                <tr><th>공급가액</th><td id="tSupply">0</td></tr>
+                <tr><th>부가세</th><td id="tVat">0</td></tr>
+                <tr class="sum"><th>합계</th><td id="tTotal">0</td></tr>
+              </table>
+            </div>
+
+            <section class="note">
+              <h2>비고</h2>
+              <p id="noteText">—</p>
+            </section>
+
+            <p class="doc-note-line">본 견적서는 견적일 기준이며, 유효기간 이후에는 금액이 변동될 수 있습니다.</p>
+
+            <footer class="doc-foot">
+              <div>
+                <p class="say">위와 같이 견적합니다.</p>
+                <p class="date" id="footDate">2026. 11. 25.</p>
+              </div>
+              <p class="issuer"><b data-out="supplierName">—</b><span data-out="footOwner">대표 —</span></p>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="outreach" aria-label="맞춤 제작 안내">
+  <figure class="outreach__fig">
+    <img src="assets/img/desk.webp" alt="견적서와 만년필, 직인이 놓인 사무실 책상" loading="lazy" width="1600" height="1067">
+    <figcaption class="outreach__cap">JD STUDIO · DOCUMENT TOOL</figcaption>
+  </figure>
+  <div class="outreach__body">
+    <p class="eyebrow">Custom build</p>
+    <h2>이 견적서를,<br>우리 회사 양식으로.</h2>
+    <p>지금 쓰신 견적서를 우리 로고와 전용 양식으로 다시 만들고, 견적서 작성부터 고객 메일 발송까지 한 번에 처리되는 자동화 툴로 붙여 드립니다. 세금계산서·거래명세서 양식도 같은 방식으로 만듭니다.</p>
+    <div class="outreach__price"><b>14.9만 원~</b><span>양식 1종 · 수정 1회 포함</span></div>
+    <ul class="outreach__list">
+      <li><i>01</i>회사 로고·직인·전용 서식 반영</li>
+      <li><i>02</i>견적서 저장, 고객 메일 자동 발송</li>
+      <li><i>03</i>품목·단가 관리와 월별 견적 집계</li>
+    </ul>
+    <div class="outreach__cta">
+      <a class="outreach__mail" href="mailto:mashiaro@naver.com?subject=%EA%B2%AC%EC%A0%81%EC%84%9C%20%EB%A7%9E%EC%B6%A4%20%EC%A0%9C%EC%9E%91%20%EB%AC%B8%EC%9D%98">mashiaro@naver.com</a>
+      <span class="outreach__dm">또는 스레드 DM</span>
+    </div>
+  </div>
+</section>
+
+<div class="mobar" role="group" aria-label="빠른 실행">
+  <button type="button" id="toPreview">미리보기</button>
+  <button type="button" class="mobar__print" data-print>PDF 저장 / 인쇄</button>
+</div>
+
+<footer class="foot">
+  <span>JD STUDIO · 구리 / 서울 · 2026</span>
+  <span>샘플 페이지입니다. 상호·사업자번호·금액은 예시이고, 입력한 내용은 이 브라우저에만 남습니다.</span>
+  <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a>
+</footer>
+
+<noscript><p class="noscript">이 견적서 발급기는 자바스크립트로 동작합니다. 브라우저에서 자바스크립트를 켜 주세요.</p></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "1초 견적서 · A4 견적서 PDF 발급기",
+  "url": "https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "웹 브라우저",
+  "inLanguage": "ko",
+  "description": "상호와 품목을 입력해 부가세·할인·직인이 반영된 A4 견적서를 만들고 인쇄하거나 PDF로 저장하는 무료 도구입니다.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+  "publisher": { "@type": "Organization", "name": "JD STUDIO", "email": "mashiaro@naver.com" }
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  var MAX_ITEMS = 8;
+  var A4_W = 210 * 96 / 25.4;   // 793.7px
+  var A4_H = 297 * 96 / 25.4;   // 1122.5px
+  var STORE = "jd-quote-04";
+
+  var form = document.getElementById("quoteForm");
+  var itemList = document.getElementById("itemList");
+  var sheetItems = document.getElementById("sheetItems");
+  var itemCount = document.getElementById("itemCount");
+  var addBtn = document.getElementById("addItem");
+  var discInput = document.getElementById("discount");
+  var noteText = document.getElementById("noteText");
+  var sealEl = document.getElementById("seal");
+  var sealText = document.getElementById("sealText");
+  var sealImg = document.getElementById("sealImg");
+  var sealOn = document.getElementById("sealOn");
+  var sealFile = document.getElementById("sealFile");
+  var sealClear = document.getElementById("sealClear");
+  var zoomPct = document.getElementById("zoomPct");
+  var zoomToggle = document.getElementById("zoomToggle");
+  var wrap = document.getElementById("sheetWrap");
+  var scaler = document.getElementById("sheetScaler");
+  var sheet = document.getElementById("sheet");
+
+  var vatMode = "separate";
+  var sealData = "";
+  var zoomed = false;
+
+  /* ── helpers ── */
+  function num(v){ v = String(v == null ? "" : v).replace(/[^\d.-]/g, ""); var n = parseFloat(v); return isFinite(n) ? n : 0; }
+  function comma(n){ n = Math.round(n); return n.toLocaleString("ko-KR"); }
+  function pad2(n){ return n < 10 ? "0" + n : "" + n; }
+  function ymd(iso){
+    if(!iso) return {dot:"—", kor:"—", short:"—"};
+    var p = iso.split("-");
+    if(p.length !== 3) return {dot:iso, kor:iso, short:iso};
+    return {
+      dot: p[0] + ". " + Number(p[1]) + ". " + Number(p[2]) + ".",
+      kor: p[0] + "년 " + Number(p[1]) + "월 " + Number(p[2]) + "일",
+      short: p[0] + "." + pad2(Number(p[1])) + "." + pad2(Number(p[2]))
+    };
+  }
+  function todayISO(){ var d = new Date(); return d.getFullYear() + "-" + pad2(d.getMonth()+1) + "-" + pad2(d.getDate()); }
+  function normalizeDate(v){
+    v = String(v == null ? "" : v).trim();
+    if(!v) return "";
+    var m = v.match(/^(\d{4})[.\-\/]?\s*(\d{1,2})[.\-\/]?\s*(\d{1,2})\.?$/);
+    if(!m) return v;
+    var y = +m[1], mo = +m[2], d = +m[3];
+    if(mo < 1 || mo > 12 || d < 1 || d > 31) return v;
+    return y + "-" + pad2(mo) + "-" + pad2(d);
+  }
+  function plusDaysISO(days){
+    var d = new Date(); d.setDate(d.getDate() + days);
+    return d.getFullYear() + "-" + pad2(d.getMonth()+1) + "-" + pad2(d.getDate());
+  }
+  var DIG = ["","일","이","삼","사","오","육","칠","팔","구"];
+  var UNIT = ["","십","백","천"];
+  var BIG = ["","만","억","조","경"];
+  function koNumber(n){
+    n = Math.floor(Math.abs(n));
+    if(!n) return "영";
+    var groups = [], x = n;
+    while(x > 0){ groups.push(x % 10000); x = Math.floor(x / 10000); }
+    var out = "";
+    for(var i = groups.length - 1; i >= 0; i--){
+      var g = groups[i], part = "";
+      for(var j = 3; j >= 0; j--){
+        var d = Math.floor(g / Math.pow(10, j)) % 10;
+        if(d) part += DIG[d] + UNIT[j];
+      }
+      if(part) out += part + BIG[i];
+    }
+    return out;
+  }
+
+  /* ── items ── */
+  function itemRow(data){
+    var row = document.createElement("div");
+    row.className = "item";
+    row.innerHTML =
+      '<div class="item__head">' +
+        '<span class="item__no">01</span>' +
+        '<input class="in item__name" data-k="name" placeholder="품목명" aria-label="품목명">' +
+        '<button type="button" class="item__del" data-del aria-label="이 품목 삭제">&times;</button>' +
+      '</div>' +
+      '<div class="item__grid">' +
+        '<label class="field"><span class="flabel">규격</span><input class="in" data-k="spec" placeholder="—" aria-label="규격"></label>' +
+        '<label class="field"><span class="flabel">수량</span><input class="in" data-k="qty" inputmode="numeric" value="1" aria-label="수량"></label>' +
+        '<label class="field"><span class="flabel">단가</span><input class="in" data-k="price" inputmode="numeric" placeholder="0" aria-label="단가"></label>' +
+        '<span class="field"><span class="flabel">금액</span><output class="item__amt is-zero" data-amt>0</output></span>' +
+      '</div>';
+    if(data){
+      row.querySelector('[data-k="name"]').value = data.name || "";
+      row.querySelector('[data-k="spec"]').value = data.spec || "";
+      row.querySelector('[data-k="qty"]').value = data.qty == null ? 1 : data.qty;
+      row.querySelector('[data-k="price"]').value = data.price ? comma(data.price) : (data.price === 0 ? "0" : "");
+    }
+    return row;
+  }
+  function readItems(){
+    return Array.prototype.map.call(itemList.querySelectorAll(".item"), function(row){
+      return {
+        name: row.querySelector('[data-k="name"]').value.trim(),
+        spec: row.querySelector('[data-k="spec"]').value.trim(),
+        qty: num(row.querySelector('[data-k="qty"]').value),
+        price: num(row.querySelector('[data-k="price"]').value)
+      };
+    });
+  }
+  function renderItems(items){
+    itemList.innerHTML = "";
+    (items && items.length ? items : [{}]).slice(0, MAX_ITEMS).forEach(function(it){
+      itemList.appendChild(itemRow(it));
+    });
+    renumber();
+  }
+  function renumber(){
+    Array.prototype.forEach.call(itemList.querySelectorAll(".item"), function(row, i){
+      row.querySelector(".item__no").textContent = pad2(i + 1);
+    });
+    var n = itemList.querySelectorAll(".item").length;
+    itemCount.textContent = n + " / " + MAX_ITEMS + "줄";
+    addBtn.style.display = n >= MAX_ITEMS ? "none" : "";
+  }
+  function addItem(data){
+    var n = itemList.querySelectorAll(".item").length;
+    if(n >= MAX_ITEMS) return;
+    var row = itemRow(data || {});
+    itemList.appendChild(row);
+    renumber();
+    recalc();
+    save();
+    row.querySelector('[data-k="name"]').focus();
+  }
+
+  /* ── bindings ── */
+  function fieldEls(){ return Array.prototype.slice.call(form.querySelectorAll("[data-field]")); }
+
+  function setBound(){
+    Array.prototype.forEach.call(form.querySelectorAll("[data-field]"), function(el){
+      var key = el.getAttribute("data-field");
+      var val = el.value;
+      var outVal = val;
+      if(key === "quoteDate" || key === "validUntil") outVal = ymd(val).dot;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-out="' + key + '"]'), function(o){
+        o.textContent = outVal || "—";
+      });
+    });
+    var d = ymd(document.querySelector('[data-field="quoteDate"]').value);
+    document.getElementById("footDate").textContent = d.short === "—" ? "—" : d.kor;
+    var owner = document.querySelector('[data-field="supplierOwner"]').value.trim();
+    document.querySelector('[data-out="footOwner"]').textContent = owner ? "대표 " + owner : "대표 —";
+    var vz = document.querySelector('[data-field="validUntil"]').value;
+    document.querySelector('[data-out="validUntil"]').textContent = vz ? ymd(vz).dot + "까지" : "—";
+
+    var name = document.querySelector('[data-field="supplierName"]').value.trim();
+    sealText.textContent = owner || (name ? name.slice(0, 4) : "인");
+  }
+
+  function recalc(){
+    var items = readItems();
+    var sum = 0;
+    var frag = document.createDocumentFragment();
+    var rows = itemList.querySelectorAll(".item");
+
+    items.forEach(function(it, i){
+      var amt = Math.round(it.qty * it.price);
+      sum += amt;
+      var out = rows[i] && rows[i].querySelector("[data-amt]");
+      if(out){ out.textContent = comma(amt); out.classList.toggle("is-zero", amt === 0); }
+    });
+
+    /* preview rows — pad to 6 for a steady table */
+    var padCount = Math.max(6, items.length);
+    for(var i = 0; i < padCount; i++){
+      var it = items[i];
+      var tr = document.createElement("tr");
+      if(!it || (!it.name && !it.price && !it.qty && !it.spec)) tr.className = "is-empty";
+      var amt = it ? Math.round(it.qty * it.price) : 0;
+      tr.innerHTML =
+        '<td class="c">' + pad2(i + 1) + "</td>" +
+        '<td class="name"></td>' +
+        '<td class="spec"></td>' +
+        '<td class="c qty"></td>' +
+        '<td class="r price"></td>' +
+        '<td class="r amt"></td>';
+      if(it){
+        tr.querySelector(".name").textContent = it.name || "";
+        tr.querySelector(".spec").textContent = it.spec || "";
+        tr.querySelector(".qty").textContent = it.qty ? comma(it.qty) : "";
+        tr.querySelector(".price").textContent = it.price ? comma(it.price) : "";
+        tr.querySelector(".amt").textContent = amt ? comma(amt) : "";
+      }
+      frag.appendChild(tr);
+    }
+    sheetItems.innerHTML = "";
+    sheetItems.appendChild(frag);
+
+    var discount = Math.min(num(discInput.value), sum);
+    var base = Math.max(0, sum - discount);
+    var supply, vat, total;
+    if(vatMode === "included"){
+      total = base;
+      vat = Math.round(total / 11);
+      supply = total - vat;
+    }else{
+      supply = base;
+      vat = Math.round(supply * 0.1);
+      total = supply + vat;
+    }
+    document.getElementById("tSupply").textContent = comma(supply) + "원";
+    document.getElementById("tVat").textContent = comma(vat) + "원";
+    document.getElementById("tTotal").textContent = comma(total) + "원";
+    var dRow = document.getElementById("discRow");
+    dRow.hidden = discount <= 0;
+    document.getElementById("tDiscount").textContent = "-" + comma(discount) + "원";
+    document.getElementById("amountWords").textContent = koNumber(total);
+
+    var note = document.querySelector('[data-field="note"]').value.trim();
+    noteText.textContent = note || "—";
+    document.querySelector(".note").style.display = note ? "" : "";
+
+    setBound();
+  }
+
+  function updateVatHint(){
+    document.getElementById("settleHint").textContent = vatMode === "separate"
+      ? "품목 합계에 10%를 더해 청구합니다."
+      : "품목 합계가 부가세 포함 금액입니다. 공급가액과 부가세를 나눠 표시합니다.";
+  }
+
+  /* ── samples ── */
+  var SAMPLES = {
+    interior: {
+      note: "부가세 별도. 자재비 포함, 철거 폐기물 처리비 포함.\n계약금 30% / 착공 시 40% / 준공 후 30%.\n공사 기간은 착공일로부터 12일 예정입니다.",
+      fields: {
+        supplierName: "정도인테리어", supplierOwner: "김성도", supplierBizno: "206-14-38210",
+        supplierAddr: "경기도 구리시 인창동 675-1, 1층", supplierTel: "010-2758-8563", supplierEmail: "mashiaro@naver.com",
+        clientName: "김민수 (인창동 24평)", clientOwner: "김민수", clientAddr: "경기도 구리시 인창동 672-3, 105동 802호", clientTel: "010-3421-7788",
+        quoteNo: "Q-2026-1125-01", note: ""
+      },
+      items: [
+        { name: "철거 및 폐기물 반출", spec: "24평", qty: 1, price: 850000 },
+        { name: "욕실 방수 및 타일 시공", spec: "1식", qty: 1, price: 1650000 },
+        { name: "주방 상부장·하부장 교체", spec: "1식", qty: 1, price: 1280000 },
+        { name: "친환경 실크 도배", spec: "24평", qty: 24, price: 80000 },
+        { name: "LED 조명 교체", spec: "12개", qty: 12, price: 35000 }
+      ],
+      discount: 150000, vat: "separate"
+    },
+    design: {
+      note: "부가세 별도. 시안 2종 제안 후 1종 확정.\n수정 2회 포함, 추가 수정은 회당 8만 원입니다.\n최종 원본 파일(AI·PSD·Figma) 인계 포함.",
+      fields: {
+        supplierName: "스튜디오 무명", supplierOwner: "이하나", supplierBizno: "412-87-01923",
+        supplierAddr: "서울 마포구 성미산로 31, 2층", supplierTel: "010-8842-1170", supplierEmail: "mashiaro@naver.com",
+        clientName: "주식회사 온도", clientOwner: "최유진", clientAddr: "서울 성동구 성수이로 51, 3층", clientTel: "02-462-3381",
+        quoteNo: "Q-2026-1125-02", note: ""
+      },
+      items: [
+        { name: "브랜드 로고 및 가이드", spec: "1식", qty: 1, price: 1800000 },
+        { name: "상세페이지 디자인", spec: "3건", qty: 3, price: 350000 },
+        { name: "명함·리플렛 인쇄", spec: "1식", qty: 1, price: 420000 }
+      ],
+      discount: 0, vat: "separate"
+    },
+    facility: {
+      note: "부가세 포함. 자재·인건비 일체 포함 견적입니다.\n일정은 발주 후 5일 이내 착수, 2일 시공.\n하자 보증 1년.",
+      fields: {
+        supplierName: "대성설비", supplierOwner: "박정호", supplierBizno: "138-22-60417",
+        supplierAddr: "경기도 남양주시 다산중앙로 82, 1층", supplierTel: "010-5517-2043", supplierEmail: "mashiaro@naver.com",
+        clientName: "온기커피 인창점", clientOwner: "정다운", clientAddr: "경기도 구리시 인창동 669-2, 1층", clientTel: "031-551-2204",
+        quoteNo: "Q-2026-1125-03", note: ""
+      },
+      items: [
+        { name: "주방 덕트 설치", spec: "12m", qty: 12, price: 85000 },
+        { name: "환기팬 설치", spec: "2대", qty: 2, price: 480000 },
+        { name: "급배수 배관 교체", spec: "1식", qty: 1, price: 1350000 },
+        { name: "시운전 및 마감 점검", spec: "1식", qty: 1, price: 250000 }
+      ],
+      discount: 0, vat: "included"
+    }
+  };
+
+  function applySample(key, silent){
+    var s = SAMPLES[key];
+    if(!s) return;
+    Array.prototype.forEach.call(form.querySelectorAll("[data-field]"), function(el){
+      var k = el.getAttribute("data-field");
+      if(s.fields[k] != null) el.value = s.fields[k];
+    });
+    document.querySelector('[data-field="quoteDate"]').value = todayISO();
+    document.querySelector('[data-field="validUntil"]').value = plusDaysISO(30);
+    document.querySelector('[data-field="note"]').value = s.note;
+    discInput.value = s.discount ? comma(s.discount) : "";
+    vatMode = s.vat;
+    setVatButtons();
+    renderItems(s.items);
+    resetSeal();
+    recalc();
+    save();
+    markSample(key);
+  }
+  function markSample(key){
+    Array.prototype.forEach.call(document.querySelectorAll("[data-sample]"), function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-sample") === key ? "true" : "false");
+    });
+  }
+
+  /* ── seal ── */
+  function resetSeal(){
+    sealData = "";
+    sealImg.hidden = true;
+    sealImg.removeAttribute("src");
+    sealText.hidden = false;
+    sealOn.checked = true;
+    sealClear.hidden = true;
+    updateSeal();
+  }
+  function updateSeal(){
+    var on = sealOn.checked;
+    var hasImg = !!sealData;
+    sealEl.hidden = !on;
+    if(hasImg){
+      if(!sealImg.getAttribute("src")) sealImg.src = sealData;
+      sealImg.hidden = !on;
+      sealText.hidden = true;
+    }else{
+      sealImg.hidden = true;
+      sealText.hidden = false;
+    }
+    sealClear.hidden = !hasImg;
+  }
+  sealFile.addEventListener("change", function(){
+    var f = sealFile.files && sealFile.files[0];
+    if(!f) return;
+    if(!/^image\//.test(f.type)) return;
+    var r = new FileReader();
+    r.onload = function(){ sealData = r.result; sealOn.checked = true; updateSeal(); save(); };
+    r.readAsDataURL(f);
+  });
+  sealClear.addEventListener("click", function(){ resetSeal(); save(); });
+  sealOn.addEventListener("change", function(){ updateSeal(); save(); });
+
+  /* ── vat ── */
+  function setVatButtons(){
+    Array.prototype.forEach.call(document.querySelectorAll("[data-vat]"), function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-vat") === vatMode ? "true" : "false");
+    });
+    updateVatHint();
+  }
+
+  /* ── zoom / fit ── */
+  function layout(){
+    var stageInner = document.querySelector(".stage__inner");
+    var isMobile = window.matchMedia("(max-width:980px)").matches;
+    var availW, availH;
+    if(zoomed){
+      var s1 = 1;
+      wrap.classList.add("is-zoom");
+      scaler.style.width = A4_W + "px";
+      scaler.style.height = A4_H + "px";
+      sheet.style.transform = "scale(1)";
+      zoomPct.textContent = "100%";
+      zoomToggle.textContent = "화면 맞춤";
+      if(!isMobile){ wrap.style.maxHeight = "calc(100vh - 128px)"; }
+      return;
+    }
+    wrap.classList.remove("is-zoom");
+    wrap.style.maxHeight = "";
+    var padX = isMobile ? 24 : 48;
+    availW = wrap.clientWidth - padX;
+    availH = isMobile ? 99999 : (stageInner.clientHeight - 46 - 20);
+    var s = Math.min(availW / A4_W, availH / A4_H, 1);
+    if(!isFinite(s) || s <= 0) s = 0.5;
+    scaler.style.width = (A4_W * s) + "px";
+    scaler.style.height = (A4_H * s) + "px";
+    sheet.style.transform = "scale(" + s + ")";
+    zoomPct.textContent = Math.round(s * 100) + "%";
+    zoomToggle.textContent = "원본 크기";
+  }
+  zoomToggle.addEventListener("click", function(){ zoomed = !zoomed; layout(); });
+
+  /* ── save / restore ── */
+  function save(){
+    try{
+      var data = { vat: vatMode, discount: discInput.value, seal: sealOn.checked ? sealData : "", fields: {}, items: readItems() };
+      fieldEls().forEach(function(el){ data.fields[el.getAttribute("data-field")] = el.value; });
+      localStorage.setItem(STORE, JSON.stringify(data));
+    }catch(e){}
+  }
+  function restore(){
+    try{
+      var raw = localStorage.getItem(STORE);
+      if(!raw) return false;
+      var d = JSON.parse(raw);
+      if(!d || !d.fields) return false;
+      fieldEls().forEach(function(el){
+        var k = el.getAttribute("data-field");
+        if(d.fields[k] != null) el.value = d.fields[k];
+      });
+      if(!document.querySelector('[data-field="quoteDate"]').value){
+        document.querySelector('[data-field="quoteDate"]').value = todayISO();
+      }
+      if(!document.querySelector('[data-field="validUntil"]').value){
+        document.querySelector('[data-field="validUntil"]').value = plusDaysISO(30);
+      }
+      discInput.value = d.discount || "";
+      vatMode = d.vat === "included" ? "included" : "separate";
+      setVatButtons();
+      renderItems(d.items && d.items.length ? d.items : [{}]);
+      resetSeal();
+      if(d.seal){ sealData = d.seal; sealImg.src = d.seal; updateSeal(); }
+      return true;
+    }catch(e){ return false; }
+  }
+
+  /* ── events ── */
+  form.addEventListener("input", function(e){
+    var t = e.target;
+    if(t.matches('[data-k="price"], [data-k="qty"]')){
+      if(t.matches('[data-k="price"]')){
+        var caretEnd = t.selectionStart === t.value.length;
+        var n = num(t.value);
+        if(t.value !== ""){
+          t.value = comma(n);
+          if(caretEnd) t.setSelectionRange(t.value.length, t.value.length);
+        }
+      }else{
+        t.value = t.value.replace(/[^\d.]/g, "");
+      }
+    }
+    if(t === discInput){
+      var ne = num(t.value);
+      if(t.value !== "") t.value = comma(ne);
+    }
+    if(t.matches("[data-sample]")) return;
+    markSample("");
+    recalc();
+    save();
+  });
+  form.addEventListener("change", function(){ recalc(); save(); });
+  form.addEventListener("focusout", function(e){
+    var t = e.target;
+    if(t.matches('[data-field="quoteDate"], [data-field="validUntil"]') && t.value){
+      t.value = normalizeDate(t.value);
+      recalc();
+      save();
+    }
+  });
+
+  itemList.addEventListener("click", function(e){
+    var del = e.target.closest("[data-del]");
+    if(!del) return;
+    var row = del.closest(".item");
+    var rows = itemList.querySelectorAll(".item");
+    if(rows.length <= 1){ row.querySelectorAll("input").forEach(function(i){ i.value = ""; }); }
+    else row.remove();
+    renumber();
+    recalc();
+    save();
+  });
+  addBtn.addEventListener("click", function(){ addItem({}); });
+
+  document.querySelectorAll("[data-vat]").forEach(function(b){
+    b.addEventListener("click", function(){
+      vatMode = b.getAttribute("data-vat");
+      setVatButtons();
+      recalc();
+      save();
+    });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-sample]"), function(b){
+    b.addEventListener("click", function(){ applySample(b.getAttribute("data-sample")); });
+  });
+
+  var toPreview = document.getElementById("toPreview");
+  if(toPreview){ toPreview.addEventListener("click", function(){ document.querySelector(".stage").scrollIntoView({behavior:"smooth", block:"start"}); }); }
+
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    if(!window.confirm("입력한 내용을 모두 지울까요? 되돌릴 수 없습니다.")) return;
+    fieldEls().forEach(function(el){ el.value = ""; });
+    document.querySelector('[data-field="quoteDate"]').value = todayISO();
+    document.querySelector('[data-field="validUntil"]').value = plusDaysISO(30);
+    document.querySelector('[data-field="quoteNo"]').value = "Q-" + todayISO().replace(/-/g, "").slice(0, 8) + "-01";
+    discInput.value = "";
+    vatMode = "separate";
+    setVatButtons();
+    renderItems([{}]);
+    resetSeal();
+    markSample("");
+    recalc();
+    save();
+  });
+
+  var printTitleBack = null;
+  function doPrint(){
+    var no = document.querySelector('[data-field="quoteNo"]').value.trim().replace(/[\\/:*?"<>|]/g, "-");
+    var cl = document.querySelector('[data-field="clientName"]').value.trim().replace(/[\\/:*?"<>|]/g, "-");
+    printTitleBack = document.title;
+    document.title = "견적서" + (no ? "_" + no : "") + (cl ? "_" + cl : "");
+    window.print();
+    window.setTimeout(function(){ if(printTitleBack){ document.title = printTitleBack; printTitleBack = null; } }, 3000);
+  }
+  window.addEventListener("afterprint", function(){
+    if(printTitleBack){ document.title = printTitleBack; printTitleBack = null; }
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-print]"), function(b){
+    b.addEventListener("click", function(){ doPrint(); });
+  });
+  document.addEventListener("keydown", function(e){
+    if((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "p"){ e.preventDefault(); doPrint(); }
+  });
+
+  window.addEventListener("resize", layout);
+  if(window.ResizeObserver){ new ResizeObserver(layout).observe(document.querySelector(".stage__inner")); }
+
+  /* ── boot ── */
+  var params = new URLSearchParams(location.search);
+  var q = params.get("sample");
+  if(q && SAMPLES[q]){ applySample(q); markSample(q); }
+  else if(!restore()){
+    applySample("interior");
+    markSample("");
+  }else{
+    recalc();
+  }
+  if(!document.querySelector('[data-field="quoteNo"]').value){
+    document.querySelector('[data-field="quoteNo"]').value = "Q-" + todayISO().replace(/-/g, "").slice(0, 8) + "-01";
+  }
+  recalc();
+  layout();
+  window.addEventListener("load", layout);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(layout); }
+})();
+</script>
+</body>
+</html>
