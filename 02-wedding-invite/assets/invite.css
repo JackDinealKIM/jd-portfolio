@@ -360,7 +360,9 @@ button{font:inherit;color:inherit}
 #editorial .hero__names span+span{margin-top:3px}
 #editorial .hero__names em{font-style:italic;font-family:var(--disp);font-size:23px;letter-spacing:0;color:rgba(242,239,233,.72);text-transform:none;margin:0 7px 0 0;vertical-align:3px}
 #editorial .hero__ko{margin-top:14px;font-size:11px;letter-spacing:.28em;color:rgba(242,239,233,.72)}
-#editorial .hero__meta{display:flex;gap:12px;align-items:center;margin-top:24px;padding-top:13px;border-top:1px solid rgba(242,239,233,.24);font-size:8.5px;letter-spacing:.2em;color:rgba(242,239,233,.7);text-transform:uppercase}
+#editorial .hero__meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:24px;padding-top:13px;border-top:1px solid rgba(242,239,233,.24);font-size:8.5px;letter-spacing:.2em;color:rgba(242,239,233,.7);text-transform:uppercase}
+#editorial .hero__meta span{white-space:nowrap}
+#editorial .hero__meta i{flex:0 0 auto}
 #editorial .hero__meta i{width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.6}
 #editorial .hero__dday{margin-left:auto;letter-spacing:.14em}
 #editorial .hero__dday b{font-family:var(--bodoni);font-size:15px;font-weight:400;letter-spacing:.04em}
