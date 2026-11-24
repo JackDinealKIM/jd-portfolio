@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>모바일 청첩장 3종 · 클래식 레터 / 필름 에디토리얼 / 가든 보태니컬 — JD STUDIO</title>
+<meta name="description" content="1만 원에 맞춤 제작하고 호스팅까지 하는 모바일 청첩장. 클래식 레터, 필름 에디토리얼, 가든 보태니컬 세 가지 무드를 실제 페이지로 열어 볼 수 있습니다.">
+<meta name="theme-color" content="#f8f4ee">
+<meta property="og:type" content="website">
+<meta property="og:title" content="모바일 청첩장 3종 · 1만 원 맞춤 제작">
+<meta property="og:description" content="클래식 레터 / 필름 에디토리얼 / 가든 보태니컬. 세 가지 무드의 모바일 청첩장을 직접 열어 보세요.">
+<meta property="og:image" content="https://jackdinealkim.github.io/jd-portfolio/02-wedding-invite/assets/og-cover.jpg">
+<meta property="og:url" content="https://jackdinealkim.github.io/jd-portfolio/02-wedding-invite/">
+<link rel="canonical" href="https://jackdinealkim.github.io/jd-portfolio/02-wedding-invite/">
+<link rel="icon" href="../01-store-landing/assets/favicon-32.png" sizes="32x32">
+<link rel="preload" href="assets/fonts/serif-kr-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sans-kr-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/invite.css">
+</head>
+<body data-tpl="classic">
+
+<!-- ============ 데스크톱: 왼쪽 템플릿 레일 ============ -->
+<aside class="side" aria-label="템플릿 선택">
+  <div>
+    <p class="side__brand"><b>JD STUDIO</b></p>
+    <p class="side__title">모바일 청첩장<em>Three moods, one day</em></p>
+    <nav class="side__list" aria-label="청첩장 템플릿">
+      <button class="side__btn on" type="button" data-tpl-btn="classic" aria-pressed="true">
+        <i>01</i><span><b>클래식 레터</b><em>Classic Letter</em></span>
+      </button>
+      <button class="side__btn" type="button" data-tpl-btn="editorial" aria-pressed="false">
+        <i>02</i><span><b>필름 에디토리얼</b><em>Film Editorial</em></span>
+      </button>
+      <button class="side__btn" type="button" data-tpl-btn="garden" aria-pressed="false">
+        <i>03</i><span><b>가든 보태니컬</b><em>Garden Botanical</em></span>
+      </button>
+    </nav>
+  </div>
+  <div>
+    <p class="side__foot"><b style="font-weight:400;opacity:.9">1만 원 맞춤 제작</b><br>사진·이름·계좌·오시는 길 수정<br>호스팅 1년 포함<br><a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a></p>
+    <p class="side__note">Sample · 430px · 예시 청첩장</p>
+  </div>
+</aside>
+
+<!-- ============ 모바일: 상단 템플릿 바 ============ -->
+<div class="bar" id="bar">
+  <div class="bar__in" role="tablist" aria-label="템플릿 선택">
+    <button class="bar__btn on" type="button" data-tpl-btn="classic" aria-pressed="true"><i>01</i>클래식</button>
+    <button class="bar__btn" type="button" data-tpl-btn="editorial" aria-pressed="false"><i>02</i>에디토리얼</button>
+    <button class="bar__btn" type="button" data-tpl-btn="garden" aria-pressed="false"><i>03</i>가든</button>
+  </div>
+</div>
+
+<div class="stage">
+<div class="phone">
+
+<!-- ============================================================
+     01 · 클래식 레터
+     ============================================================ -->
+<main class="inv is-on" id="classic">
+
+  <section class="hero">
+    <div class="hero__photo">
+      <img src="assets/img/classic-hero.webp" alt="늦은 오후 햇살이 드는 한옥 마당에 나란히 선 신랑과 신부" fetchpriority="high" width="1086" height="1448">
+      <canvas class="fx" data-fx="classic" aria-hidden="true"></canvas>
+      <div class="hero__scrim"></div>
+      <div class="hero__tag"><span>Invitation</span><span>2027</span></div>
+    </div>
+    <div class="card">
+      <div class="seal" aria-hidden="true">D·S</div>
+      <p class="eyebrow">The Wedding of</p>
+      <h1 class="names"><span>김도현</span><span class="amp">&amp;</span><span>이서연</span></h1>
+      <p class="names-en">Dohyun &amp; Seoyeon</p>
+      <p class="hero__date">2027. 05. 22. SAT<em>12:30 PM</em></p>
+      <p class="hero__venue">메종 드 가든 · 3F 그랜드홀</p>
+      <div class="hero__dday"><span class="dday" data-dday></span></div>
+      <p class="cue"><i></i>초대합니다</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">Invitation</span>
+      <h2>초대합니다</h2>
+      <div class="orn" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="letter">
+      <span class="big">서로가 서로의 계절이 되어</span>
+      <p>같은 방향으로 걷기 시작합니다.<br>따뜻한 봄날, 저희 두 사람의 첫걸음에<br>함께해 주시면 감사하겠습니다.</p>
+      <p class="sign">Dohyun &amp; Seoyeon</p>
+    </div>
+    <figure class="letter__photo">
+      <img src="assets/img/classic-05.webp" alt="밀랍 인장으로 봉한 아이보리 청첩장 봉투" loading="lazy" width="900" height="1125">
+      <figcaption>Save the date</figcaption>
+    </figure>
+    <div class="parents">
+      <div>
+        <p>김재우 · 박선미<br>의 장남</p>
+        <p class="child">김도현</p>
+      </div>
+      <div>
+        <p>이정호 · 최은영<br>의 장녀</p>
+        <p class="child">이서연</p>
+      </div>
+    </div>
+    <div class="contact-line"><button class="ghost" type="button" data-contact>혼주에게 연락하기 <span>→</span></button></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">The Day</span>
+      <h2>오시는 날</h2>
+      <div class="orn" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="dateband">
+      <p class="when">2027년 5월 22일 토요일<em>12:30 PM · Seoul</em></p>
+    </div>
+    <div class="calbox"><div data-cal></div></div>
+    <div class="center"><span class="dday" data-dday></span></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">Gallery</span>
+      <h2>우리의 봄</h2>
+      <div class="orn" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="gal" data-gal>
+      <a href="assets/img/classic-01.webp" data-cap="서로의 손"><img src="assets/img/classic-01.webp" alt="아이보리 실크 위로 포개진 두 사람의 손과 결혼반지" loading="lazy" width="900" height="599"><i>01</i></a>
+      <a href="assets/img/classic-02.webp" data-cap="봄의 부케"><img src="assets/img/classic-02.webp" alt="린넨 위에 놓인 흰 장미와 라넌큘러스 부케" loading="lazy" width="900" height="1125"><i>02</i></a>
+      <a href="assets/img/classic-03.webp" data-cap="베일"><img src="assets/img/classic-03.webp" alt="햇살을 받은 베일을 쓴 신부의 뒷모습" loading="lazy" width="900" height="1200"><i>03</i></a>
+      <a href="assets/img/classic-04.webp" data-cap="저녁의 식탁"><img src="assets/img/classic-04.webp" alt="촛불과 흰 꽃으로 차린 예식 만찬 테이블" loading="lazy" width="900" height="600"><i>04</i></a>
+    </div>
+    <p class="caption center mt14">2026 Autumn · Studio</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">Location</span>
+      <h2>오시는 길</h2>
+      <div class="orn" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mapbox">
+      <p class="place__name">메종 드 가든 · 3층 그랜드홀</p>
+      <p class="place__addr"><span>서울 성동구 서울숲길 24</span><button class="copy" type="button" data-copy="서울 성동구 서울숲길 24">주소 복사</button></p>
+      <div class="maps">
+        <a href="https://map.naver.com/p/search/서울%20성동구%20서울숲길%2024" target="_blank" rel="noopener" data-map="naver"><em></em>네이버 지도</a>
+        <a href="https://map.kakao.com/link/search/서울%20성동구%20서울숲길%2024" target="_blank" rel="noopener" data-map="kakao"><em></em>카카오맵</a>
+        <a href="tmap://route?goalname=메종드가든&amp;goalx=127.0444&amp;goaly=37.5447" data-map="tmap"><em></em>티맵</a>
+      </div>
+      <ul class="info">
+        <li><b>지하철</b><span>수인분당선 서울숲역 3번 출구에서 도보 7분</span></li>
+        <li><b>버스</b><span>1213 · 2016 · 2413 ‘서울숲역’ 정류장 하차</span></li>
+        <li><b>주차</b><span>건물 지하 2층 · 예식 등록 시 2시간 무료</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">Gift</span>
+      <h2>마음 전하실 곳</h2>
+      <div class="orn" aria-hidden="true"><i></i></div>
+    </div>
+    <p class="lead center">참석이 어려우신 분들의 마음은<br>아래 계좌로 전해 주시면 감사히 받겠습니다.</p>
+    <div class="acc" data-acc>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" data-acc-btn aria-expanded="false">신랑 측<strong class="sign" aria-hidden="true"></strong></button>
+        <div class="acc__panel"><div class="acc__inner">
+          <div class="acc__row"><div><p class="who">신랑 김도현</p><p class="num">국민은행 000-0000-0000</p></div><button class="copy" type="button" data-copy="국민은행 000-0000-0000">복사</button></div>
+          <div class="acc__row"><div><p class="who">아버지 김재우</p><p class="num">신한은행 000-000-000000</p></div><button class="copy" type="button" data-copy="신한은행 000-000-000000">복사</button></div>
+        </div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" data-acc-btn aria-expanded="false">신부 측<strong class="sign" aria-hidden="true"></strong></button>
+        <div class="acc__panel"><div class="acc__inner">
+          <div class="acc__row"><div><p class="who">신부 이서연</p><p class="num">카카오뱅크 0000-00-0000000</p></div><button class="copy" type="button" data-copy="카카오뱅크 0000-00-0000000">복사</button></div>
+          <div class="acc__row"><div><p class="who">어머니 최은영</p><p class="num">하나은행 000-000000-00000</p></div><button class="copy" type="button" data-copy="하나은행 000-000000-00000">복사</button></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">Share</span>
+      <h2>청첩장 보내기</h2>
+      <div class="orn" aria-hidden="true"><i></i></div>
+    </div>
+    <p class="lead center">링크를 복사해 소중한 분들께 전해 주세요.</p>
+    <div class="share">
+      <button class="ghost" type="button" data-share>공유하기 <span>→</span></button>
+      <button class="ghost" type="button" data-copy-link>링크 복사</button>
+    </div>
+  </section>
+
+  <footer class="credit">
+    <p class="brand">D · S</p>
+    <p><b>1만 원 맞춤 제작 · 호스팅 포함</b></p>
+    <p>문의 <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a></p>
+    <span>샘플 청첩장입니다 · 이름·날짜·계좌·연락처는 예시<br>사진은 이미지 생성 도구로 만든 예시이며, 실제 제작 시 두 분의 사진으로 교체합니다.</span>
+  </footer>
+</main>
+
+<!-- ============================================================
+     02 · 필름 에디토리얼
+     ============================================================ -->
+<main class="inv" id="editorial">
+
+  <section class="hero">
+    <div class="hero__photo">
+      <img src="assets/img/editorial-hero.webp" alt="호텔 복도의 측광 아래 서 있는 신랑과 신부의 흑백 사진" loading="lazy" width="1086" height="1448">
+      <canvas class="fx" data-fx="editorial" aria-hidden="true"></canvas>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+    <p class="vlabel">The Wedding · Seoul · 2027</p>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">The Wedding of</p>
+      <h1 class="hero__names"><span>Kim Dohyun</span><span><em>&amp;</em>Lee Seoyeon</span></h1>
+      <p class="hero__ko">김도현 · 이서연</p>
+      <div class="hero__meta">
+        <span>2027.05.22</span><i></i><span>12:30 PM</span><i></i><span>Maison de Garden</span>
+        <span class="hero__dday" data-dday></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__in">
+      <span>Kim Dohyun &amp; Lee Seoyeon — 2027.05.22 — Maison de Garden, Seoul —&nbsp;</span>
+      <span>Kim Dohyun &amp; Lee Seoyeon — 2027.05.22 — Maison de Garden, Seoul —&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="paper">
+    <section class="sec">
+      <div class="sec__head">
+        <span class="idx">01</span>
+        <div>
+          <h2>우리는 서두르지 않았습니다</h2>
+          <span class="h-en">The Invitation</span>
+        </div>
+      </div>
+      <div class="letter">
+        <p>계절을 몇 번 함께 보내고,<br>이제 같은 집에 살기로 했습니다.<br>화려하지 않아도 오래 남는 하루를<br>두 사람답게 준비했습니다.</p>
+        <p>그날의 공기를 함께 느껴 주세요.</p>
+      </div>
+      <p class="pull">A quiet day,<br>kept for a long time.</p>
+      <dl class="parents">
+        <div><dt>Groom</dt><dd>김재우 · 박선미의 장남 <b>김도현</b></dd></div>
+        <div><dt>Bride</dt><dd>이정호 · 최은영의 장녀 <b>이서연</b></dd></div>
+      </dl>
+      <div class="center"><button class="ghost" type="button" data-contact>혼주에게 연락하기 <span>→</span></button></div>
+    </section>
+
+    <section class="dayband">
+      <div class="sec__head">
+        <span class="idx">02</span>
+        <div>
+          <h2>2027년 5월 22일, 토요일</h2>
+          <span class="h-en">The Day</span>
+        </div>
+      </div>
+      <div class="calbox"><div data-cal></div></div>
+      <div class="dateband">
+        <p class="when">오후 12시 30분<br>메종 드 가든 3층 그랜드홀<em>12:30 PM · Seoul</em></p>
+        <span class="dday" data-dday></span>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head">
+        <span class="idx">03</span>
+        <div>
+          <h2>빛과 그림자 사이</h2>
+          <span class="h-en">Gallery · Four Frames</span>
+        </div>
+      </div>
+      <div class="gal" data-gal>
+        <a href="assets/img/editorial-02.webp" data-cap="The first dance"><img src="assets/img/editorial-02.webp" alt="어두운 연회장에서 스포트라이트를 받으며 춤추는 두 사람의 흑백 사진" loading="lazy" width="900" height="1200"><i>01</i></a>
+        <a href="assets/img/editorial-01.webp" data-cap="Veil"><img src="assets/img/editorial-01.webp" alt="베일을 쓴 신부의 옆얼굴 흑백 클로즈업" loading="lazy" width="900" height="1125"><i>02</i></a>
+        <a href="assets/img/editorial-03.webp" data-cap="Stairs"><img src="assets/img/editorial-03.webp" alt="건축적 계단을 걷는 두 사람의 작은 실루엣" loading="lazy" width="900" height="1200"><i>03</i></a>
+        <a href="assets/img/editorial-04.webp" data-cap="Satin &amp; pearls"><img src="assets/img/editorial-04.webp" alt="새틴 드레스의 주름과 진주 목걸이 흑백 사진" loading="lazy" width="900" height="600"><i>04</i></a>
+      </div>
+      <p class="caption mt14">2026 · Seoul · 35mm film</p>
+    </section>
+
+    <section class="sec place">
+      <div class="sec__head">
+        <span class="idx">04</span>
+        <div>
+          <h2>오시는 길</h2>
+          <span class="h-en">The Place</span>
+        </div>
+      </div>
+      <p class="place__name mt22">메종 드 가든 · 3층 그랜드홀</p>
+      <p class="place__addr"><span>서울 성동구 서울숲길 24</span><button class="copy" type="button" data-copy="서울 성동구 서울숲길 24">주소 복사</button></p>
+      <div class="maps">
+        <a href="https://map.naver.com/p/search/서울%20성동구%20서울숲길%2024" target="_blank" rel="noopener" data-map="naver"><em></em>Naver</a>
+        <a href="https://map.kakao.com/link/search/서울%20성동구%20서울숲길%2024" target="_blank" rel="noopener" data-map="kakao"><em></em>Kakao</a>
+        <a href="tmap://route?goalname=메종드가든&amp;goalx=127.0444&amp;goaly=37.5447" data-map="tmap"><em></em>Tmap</a>
+      </div>
+      <ul class="info">
+        <li><b>Subway</b><span>수인분당선 서울숲역 3번 출구, 도보 7분</span></li>
+        <li><b>Bus</b><span>1213 · 2016 · 2413 ‘서울숲역’ 하차</span></li>
+        <li><b>Parking</b><span>건물 지하 2층 · 예식 등록 시 2시간 무료</span></li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head">
+        <span class="idx">05</span>
+        <div>
+          <h2>마음 전하실 곳</h2>
+          <span class="h-en">Gifts</span>
+        </div>
+      </div>
+      <p class="lead mt22">참석이 어려우신 분들의 마음은 아래 계좌로 전해 주시면 감사히 받겠습니다.</p>
+      <div class="acc" data-acc>
+        <div class="acc__item">
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false"><span><span class="no">01</span>신랑 측</span><strong class="sign" aria-hidden="true"></strong></button>
+          <div class="acc__panel"><div class="acc__inner">
+            <div class="acc__row"><div><p class="who">김도현</p><p class="num">국민은행 000-0000-0000</p></div><button class="copy" type="button" data-copy="국민은행 000-0000-0000">Copy</button></div>
+            <div class="acc__row"><div><p class="who">김재우</p><p class="num">신한은행 000-000-000000</p></div><button class="copy" type="button" data-copy="신한은행 000-000-000000">Copy</button></div>
+          </div></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false"><span><span class="no">02</span>신부 측</span><strong class="sign" aria-hidden="true"></strong></button>
+          <div class="acc__panel"><div class="acc__inner">
+            <div class="acc__row"><div><p class="who">이서연</p><p class="num">카카오뱅크 0000-00-0000000</p></div><button class="copy" type="button" data-copy="카카오뱅크 0000-00-0000000">Copy</button></div>
+            <div class="acc__row"><div><p class="who">최은영</p><p class="num">하나은행 000-000000-00000</p></div><button class="copy" type="button" data-copy="하나은행 000-000000-00000">Copy</button></div>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__head">
+        <span class="idx">06</span>
+        <div>
+          <h2>청첩장 보내기</h2>
+          <span class="h-en">Share</span>
+        </div>
+      </div>
+      <p class="lead mt22">링크를 복사해 전해 주세요.</p>
+      <div class="share">
+        <button class="ghost" type="button" data-share>공유하기 <span>→</span></button>
+        <button class="ghost" type="button" data-copy-link>링크 복사</button>
+      </div>
+    </section>
+  </div>
+
+  <footer class="credit">
+    <p class="brand">KIM · LEE</p>
+    <p><b>1만 원 맞춤 제작 · 호스팅 포함</b></p>
+    <p>문의 <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a></p>
+    <span>샘플 청첩장입니다 · 이름·날짜·계좌·연락처는 예시<br>사진은 이미지 생성 도구로 만든 예시이며, 실제 제작 시 두 분의 사진으로 교체합니다.</span>
+  </footer>
+</main>
+
+<!-- ============================================================
+     03 · 가든 보태니컬
+     ============================================================ -->
+<main class="inv" id="garden">
+
+  <section class="hero">
+    <div class="hero__frame">
+      <div class="hero__photo">
+        <img src="assets/img/garden-hero.webp" alt="나무 그늘 아래 꽃길로 이어진 야외 예식장" fetchpriority="high" width="1000" height="1333">
+        <canvas class="fx" data-fx="garden" aria-hidden="true"></canvas>
+        <p class="hero__tag">a garden wedding</p>
+      </div>
+    </div>
+    <div class="hero__text">
+      <h1 class="names"><span>김도현</span><span class="amp">&amp;</span><span>이서연</span></h1>
+      <p class="hero__en">Dohyun &amp; Seoyeon</p>
+      <p class="hero__date">2027년 5월 22일 토요일 · 오후 12시 30분</p>
+      <p class="hero__venue">메종 드 가든 · 3층 그랜드홀</p>
+      <div class="hero__dday"><span class="dday" data-dday></span></div>
+      <div class="sprig" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".9" stroke-linecap="round"><path d="M12 21V6"/><path d="M12 11.5c2.9 0 5-1.7 5-4.2-2.9 0-5 1.7-5 4.2Z"/><path d="M12 11.5c-2.9 0-5-1.7-5-4.2 2.9 0 5 1.7 5 4.2Z"/><path d="M12 16.5c2.3 0 4-1.4 4-3.4-2.3 0-4 1.4-4 3.4Z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">Invitation</span>
+      <h2>초대합니다</h2>
+    </div>
+    <div class="letter">
+      <span class="big">햇살이 길게 머무는 오후</span>
+      <p>나무 그늘 아래에서<br>두 사람의 약속을 맺으려 합니다.<br>바람과 꽃, 그리고 소중한 분들을<br>함께 모시고 싶습니다.</p>
+      <p class="sign">Dohyun &amp; Seoyeon</p>
+    </div>
+    <div class="parents">
+      <div><p>김재우 · 박선미의 장남</p><p class="child">김도현</p></div>
+      <div><p>이정호 · 최은영의 장녀</p><p class="child">이서연</p></div>
+    </div>
+    <div class="contact-line"><button class="ghost" type="button" data-contact>혼주에게 연락하기 <span>→</span></button></div>
+  </section>
+
+  <section class="sec sec--tint">
+    <div class="sec__head">
+      <span class="kicker">Our Story</span>
+      <h2>우리가 걸어온 길</h2>
+    </div>
+    <ul class="tl">
+      <li><time>2019.05</time><p><b>첫 만남</b>서울숲 벚꽃 아래에서</p></li>
+      <li><time>2022.10</time><p><b>첫 여행</b>교토의 가을을 함께</p></li>
+      <li><time>2026.09</time><p><b>프러포즈</b>같은 자리, 같은 사람</p></li>
+      <li class="now"><time>2027.05</time><p><b>결혼</b>이제 한집에 삽니다</p></li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">The Day</span>
+      <h2>오시는 날</h2>
+    </div>
+    <div class="calbox"><div data-cal></div></div>
+    <div class="center"><span class="dday" data-dday></span></div>
+    <div class="dateband">
+      <p class="when">2027년 5월 22일 토요일 · 오후 12시 30분<em>Maison de Garden · Seoul</em></p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">Gallery</span>
+      <h2>정원의 순간들</h2>
+    </div>
+    <div class="gal" data-gal>
+      <a href="assets/img/garden-01.webp" data-cap="정원을 걷다"><img src="assets/img/garden-01.webp" alt="햇살을 등지고 정원 길을 걷는 신랑과 신부" loading="lazy" width="900" height="1200"><i>01</i></a>
+      <a href="assets/img/garden-02.webp" data-cap="들꽃 부케"><img src="assets/img/garden-02.webp" alt="린넨 드레스 위로 든 들꽃과 유칼립투스 부케" loading="lazy" width="900" height="1125"><i>02</i></a>
+      <a href="assets/img/garden-04.webp" data-cap="반지"><img src="assets/img/garden-04.webp" alt="풀잎과 들꽃 사이에 놓인 두 개의 금반지" loading="lazy" width="900" height="600"><i>03</i></a>
+      <a href="assets/img/garden-03.webp" data-cap="나무 아래 식탁"><img src="assets/img/garden-03.webp" alt="나무 그늘 아래 린넨으로 차린 야외 만찬 테이블" loading="lazy" width="900" height="599"><i>04</i></a>
+      <a href="assets/img/garden-05.webp" data-cap="초록의 오후"><img src="assets/img/garden-05.webp" alt="햇살이 드는 온실 벽 앞의 유칼립투스 가지" loading="lazy" width="900" height="1350"><i>05</i></a>
+    </div>
+    <p class="caption center mt14">2026 · Garden · Natural light</p>
+  </section>
+
+  <section class="sec sec--tint">
+    <div class="sec__head">
+      <span class="kicker">Location</span>
+      <h2>오시는 길</h2>
+    </div>
+    <p class="place__name">메종 드 가든 · 3층 그랜드홀</p>
+    <p class="place__addr"><span>서울 성동구 서울숲길 24</span><button class="copy" type="button" data-copy="서울 성동구 서울숲길 24">주소 복사</button></p>
+    <div class="maps">
+      <a href="https://map.naver.com/p/search/서울%20성동구%20서울숲길%2024" target="_blank" rel="noopener" data-map="naver"><em></em>네이버 지도</a>
+      <a href="https://map.kakao.com/link/search/서울%20성동구%20서울숲길%2024" target="_blank" rel="noopener" data-map="kakao"><em></em>카카오맵</a>
+      <a href="tmap://route?goalname=메종드가든&amp;goalx=127.0444&amp;goaly=37.5447" data-map="tmap"><em></em>티맵</a>
+    </div>
+    <ul class="info">
+      <li><b>지하철</b><span>수인분당선 서울숲역 3번 출구에서 도보 7분</span></li>
+      <li><b>버스</b><span>1213 · 2016 · 2413 ‘서울숲역’ 정류장 하차</span></li>
+      <li><b>주차</b><span>건물 지하 2층 · 예식 등록 시 2시간 무료</span></li>
+      <li><b>안내</b><span>야외 정원 예식입니다. 편한 신발을 권합니다.</span></li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">Gift</span>
+      <h2>마음 전하실 곳</h2>
+    </div>
+    <p class="lead center">참석이 어려우신 분들의 마음은<br>아래 계좌로 전해 주시면 감사히 받겠습니다.</p>
+    <div class="acc" data-acc>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" data-acc-btn aria-expanded="false">신랑 측<strong class="sign" aria-hidden="true"></strong></button>
+        <div class="acc__panel"><div class="acc__inner">
+          <div class="acc__row"><div><p class="who">신랑 김도현</p><p class="num">국민은행 000-0000-0000</p></div><button class="copy" type="button" data-copy="국민은행 000-0000-0000">복사</button></div>
+          <div class="acc__row"><div><p class="who">아버지 김재우</p><p class="num">신한은행 000-000-000000</p></div><button class="copy" type="button" data-copy="신한은행 000-000-000000">복사</button></div>
+        </div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" data-acc-btn aria-expanded="false">신부 측<strong class="sign" aria-hidden="true"></strong></button>
+        <div class="acc__panel"><div class="acc__inner">
+          <div class="acc__row"><div><p class="who">신부 이서연</p><p class="num">카카오뱅크 0000-00-0000000</p></div><button class="copy" type="button" data-copy="카카오뱅크 0000-00-0000000">복사</button></div>
+          <div class="acc__row"><div><p class="who">어머니 최은영</p><p class="num">하나은행 000-000000-00000</p></div><button class="copy" type="button" data-copy="하나은행 000-000000-00000">복사</button></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head">
+      <span class="kicker">Share</span>
+      <h2>청첩장 보내기</h2>
+    </div>
+    <p class="lead center">링크를 복사해 소중한 분들께 전해 주세요.</p>
+    <div class="share">
+      <button class="ghost" type="button" data-share>공유하기 <span>→</span></button>
+      <button class="ghost" type="button" data-copy-link>링크 복사</button>
+    </div>
+  </section>
+
+  <footer class="credit">
+    <p class="brand">in the garden</p>
+    <p><b>1만 원 맞춤 제작 · 호스팅 포함</b></p>
+    <p>문의 <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a></p>
+    <span>샘플 청첩장입니다 · 이름·날짜·계좌·연락처는 예시<br>사진은 이미지 생성 도구로 만든 예시이며, 실제 제작 시 두 분의 사진으로 교체합니다.</span>
+  </footer>
+</main>
+
+</div><!-- /.phone -->
+</div><!-- /.stage -->
+
+<!-- ============ 사진 크게 보기 ============ -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+  <span class="lb__count" id="lbCount"></span>
+  <button class="lb__close" type="button" id="lbClose" aria-label="닫기">×</button>
+  <div class="lb__stage">
+    <img id="lbImg" alt="">
+    <p class="lb__cap" id="lbCap"></p>
+  </div>
+  <button class="lb__nav lb__prev" type="button" id="lbPrev" aria-label="이전 사진">←</button>
+  <button class="lb__nav lb__next" type="button" id="lbNext" aria-label="다음 사진">→</button>
+</div>
+
+<!-- ============ 혼주에게 연락하기 ============ -->
+<dialog id="contactDlg" aria-labelledby="contactTitle">
+  <form method="dialog" class="sheet">
+    <h3 id="contactTitle">혼주에게 연락하기</h3>
+    <p class="caption">전화를 걸거나 문자를 보낼 수 있습니다.</p>
+    <div class="sheet__rows">
+      <div class="sheet__row">
+        <div><p class="who">신랑 아버지</p><p class="name">김재우</p></div>
+        <div class="sheet__acts">
+          <a href="tel:010-0000-0000">전화</a>
+          <a href="sms:010-0000-0000">문자</a>
+        </div>
+      </div>
+      <div class="sheet__row">
+        <div><p class="who">신랑 어머니</p><p class="name">박선미</p></div>
+        <div class="sheet__acts">
+          <a href="tel:010-0000-0000">전화</a>
+          <a href="sms:010-0000-0000">문자</a>
+        </div>
+      </div>
+      <div class="sheet__row">
+        <div><p class="who">신부 아버지</p><p class="name">이정호</p></div>
+        <div class="sheet__acts">
+          <a href="tel:010-0000-0000">전화</a>
+          <a href="sms:010-0000-0000">문자</a>
+        </div>
+      </div>
+      <div class="sheet__row">
+        <div><p class="who">신부 어머니</p><p class="name">최은영</p></div>
+        <div class="sheet__acts">
+          <a href="tel:010-0000-0000">전화</a>
+          <a href="sms:010-0000-0000">문자</a>
+        </div>
+      </div>
+    </div>
+    <button class="sheet__close" value="close">닫기</button>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/vendor/three.min.js" defer></script>
+<script src="assets/invite.js"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@
 
 - 라이브: https://jackdinealkim.github.io/jd-portfolio/
 - 샘플: https://jackdinealkim.github.io/jd-portfolio/01-store-landing/
+- 청첩장: https://jackdinealkim.github.io/jd-portfolio/02-wedding-invite/
 - 문의: mashiaro@naver.com
 
 ## 작업물
@@ -12,8 +13,11 @@
 | # | 항목 | 설명 | 링크 |
 |---|------|------|------|
 | 01 | 업종별 원페이지 홈페이지 (3종) | 카페·식당 / 인테리어·설비 / 학원·공방. 상단 탭으로 상호·문장·메뉴·사진·강조색이 전환됩니다. | [`01-store-landing/`](01-store-landing/) |
+| 02 | 모바일 청첩장 (3종) | 클래식 레터 / 필름 에디토리얼 / 가든 보태니컬. 달력·D-day·갤러리·오시는 길·계좌 복사·공유 포함. | [`02-wedding-invite/`](02-wedding-invite/) |
 
 업종별 직접 링크: [`?ind=cafe`](01-store-landing/?ind=cafe) · [`?ind=interior`](01-store-landing/?ind=interior) · [`?ind=clay`](01-store-landing/?ind=clay)
+
+청첩장 직접 링크: [`?tpl=classic`](02-wedding-invite/?tpl=classic) · [`?tpl=editorial`](02-wedding-invite/?tpl=editorial) · [`?tpl=garden`](02-wedding-invite/?tpl=garden)
 
 ## 가격
 
@@ -22,6 +26,7 @@
 | 9.9만 원 | 원페이지 랜딩 (수정 1회 포함) | 1~2일 |
 | 14.9만 원 | 블로그·SNS 글감 생성기 / 엑셀 정리 툴 (단일 기능) | 2~3일 |
 | 24.9만 원 | 업종 맞춤 홈페이지 + 예약·지도·문의 연결 패키지 | 3~5일 |
+| 1만 원 | 모바일 청첩장 (템플릿 3종 중 선택, 호스팅 1년 포함) | 1일 |
 
 ## 구성
 
@@ -34,6 +39,14 @@ jd-portfolio/
 │   │   ├── *.webp              # 업종별 실사 이미지 (히어로 3 + 갤러리 13)
 │   │   ├── fonts/              # 한글 세리프·산세리프·모노 서브셋 (woff2)
 │   │   └── vendor/three.min.js # WebGL 히어로 평면
+│   └── README.md
+├── 02-wedding-invite/
+│   ├── index.html              # 모바일 청첩장 3종 (?tpl=classic|editorial|garden)
+│   ├── assets/
+│   │   ├── invite.css · invite.js
+│   │   ├── img/*.webp          # 웨딩 실사 이미지 17장
+│   │   ├── fonts/              # 한글 서브셋 + 라틴 디스플레이
+│   │   └── vendor/three.min.js
 │   └── README.md
 └── README.md
 ```
