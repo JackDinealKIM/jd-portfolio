@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JD STUDIO · 소상공인 홈페이지 제작 · SEO·AEO·GEO + 웹블로그</title>
+<title>LONGSNAKE · 소상공인 홈페이지 제작 · SEO·AEO·GEO + 웹블로그</title>
 <meta name="description" content="가게 하나에 홈페이지 하나. 카페·식당, 인테리어·설비, 학원·공방 원페이지를 9.9만 원부터, 검색과 AI에 잡히는 구조와 웹블로그까지 29만 원부터 만듭니다. 상호와 사진, 메뉴만 주시면 문장과 구조를 함께 만듭니다.">
 <meta name="theme-color" content="#F2EFE9">
 <meta property="og:type" content="website">
-<meta property="og:title" content="JD STUDIO · 소상공인 홈페이지 제작 · SEO·AEO·GEO + 웹블로그">
+<meta property="og:title" content="LONGSNAKE · 소상공인 홈페이지 제작 · SEO·AEO·GEO + 웹블로그">
 <meta property="og:description" content="원페이지 9.9만 원부터, 검색 노출 구조와 웹블로그까지 29만 원부터. 네 업종 샘플을 직접 열어 볼 수 있습니다.">
 <meta property="og:image" content="01-store-landing/assets/cafe-space.webp">
 <link rel="icon" href="01-store-landing/assets/favicon-32.png" sizes="32x32">
@@ -137,10 +137,20 @@ ul{margin:0;padding:0;list-style:none}
 .contact{max-width:var(--maxw);margin:0 auto;padding:clamp(72px,9vw,120px) var(--pad);border-top:1px solid var(--line)}
 .contact__kick{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
 .contact h2{word-break:keep-all;font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,60px);line-height:1.18;letter-spacing:-.03em;margin-top:20px;max-width:20ch;text-wrap:balance}
-.contact__mail{display:inline-flex;align-items:baseline;gap:14px;margin-top:32px;font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);letter-spacing:-.02em;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:6px;transition:color .3s var(--ease),border-color .3s var(--ease)}
+.contact__grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);row-gap:clamp(32px,4vw,48px);align-items:start;margin-top:6px}
+.contact__body{grid-column:1/8}
+.contact__ways{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px}
+.kbtn{display:inline-flex;align-items:center;gap:12px;padding:15px 22px;background:#FEE500;color:#191600;border:1px solid #FEE500;font-size:14px;font-weight:600;text-decoration:none;transition:transform .3s var(--ease),background .3s var(--ease),border-color .3s var(--ease)}
+.kbtn:hover{transform:translateY(-2px);background:#FFEA5C;border-color:#FFEA5C}
+.kbtn:active{transform:none;scale:.995}
+.kbtn__arw{font-family:var(--mono);font-size:11px;font-weight:400;opacity:.6}
+.contact__mail{display:inline-flex;align-items:baseline;gap:12px;margin-top:24px;font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);letter-spacing:-.01em;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:5px;transition:color .3s var(--ease),border-color .3s var(--ease);overflow-wrap:anywhere}
 .contact__mail:hover{color:var(--accent);border-color:var(--accent)}
-.contact__mail span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
+.contact__mail span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--muted)}
 .contact__note{margin-top:20px;font-size:13px;line-height:1.8;color:var(--muted);max-width:52ch}
+.qrcard{grid-column:9/13;justify-self:end;width:clamp(170px,18vw,212px);padding:14px 14px 12px;background:#fff;border:1px solid var(--line)}
+.qrcard img{width:100%;height:auto}
+.qrcard__cap{margin-top:11px;padding-top:9px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:9px;line-height:1.75;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;word-break:break-all}
 
 .foot{max-width:var(--maxw);margin:0 auto;padding:40px var(--pad) 36px;border-top:1px solid var(--line)}
 .foot__base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;line-height:1.9}
@@ -185,7 +195,13 @@ ul{margin:0;padding:0;list-style:none}
   .rate__days{grid-column:1/-1;order:4;text-align:left;margin-top:4px}
   .steps{grid-template-columns:1fr}
   .step{grid-column:1/-1;margin-top:0!important}
-  .contact__mail{font-size:20px}
+  .contact__mail{font-size:17px}
+  .contact__grid{grid-template-columns:1fr;row-gap:26px}
+  .contact__body,.qrcard{grid-column:1/-1}
+  .qrcard{justify-self:stretch;width:100%;display:flex;align-items:center;gap:14px;padding:12px}
+  .qrcard img{width:86px;flex:none}
+  .qrcard__cap{margin-top:0;padding-top:0;border-top:0;flex:1;font-size:9.5px;line-height:1.8}
+  .kbtn{width:100%;justify-content:space-between;padding:15px 18px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -199,7 +215,7 @@ ul{margin:0;padding:0;list-style:none}
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 
 <header class="bar">
-  <a class="mark" href="#top"><b>JD</b><span>STUDIO</span></a>
+  <a class="mark" href="#top"><b>롱스네이크</b><span>LONGSNAKE</span></a>
   <nav class="nav" aria-label="페이지 안내">
     <a href="#work">작업</a>
     <a href="#invite">청첩장</a>
@@ -208,7 +224,7 @@ ul{margin:0;padding:0;list-style:none}
     <a href="#price">가격</a>
     <a href="#process">과정</a>
   </nav>
-  <a class="bar__mail" href="mailto:mashiaro@naver.com">mashiaro@naver.com</a>
+  <a class="bar__mail" href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a>
 </header>
 
 <main id="main">
@@ -421,7 +437,7 @@ ul{margin:0;padding:0;list-style:none}
     <header class="sec__head">
       <span class="sec__no">06</span>
       <h2 class="sec__title">사흘 안에 끝나는 순서.</h2>
-      <p class="sec__desc">상담은 메일이나 카카오톡으로 하고, 초안은 링크로 보내 드립니다. 직접 만나지 않아도 됩니다.</p>
+      <p class="sec__desc">상담은 <a href="https://open.kakao.com/o/sjAtvLKh" target="_blank" rel="noopener">카카오톡 오픈채팅</a>이나 메일로 하고, 초안은 링크로 보내 드립니다. 직접 만나지 않아도 됩니다.</p>
     </header>
     <div class="steps">
       <div class="step" data-rv>
@@ -444,17 +460,28 @@ ul{margin:0;padding:0;list-style:none}
 
   <section class="contact" id="contact">
     <p class="contact__kick">CONTACT</p>
-    <h2>메일 한 통이면 시작합니다.</h2>
-    <a class="contact__mail" href="mailto:mashiaro@naver.com">mashiaro@naver.com<span>MAIL</span></a>
-    <p class="contact__note">가게 이름과 업종, 하려는 일을 한 줄로 적어 주세요. 답장에 견적과 일정을 함께 드립니다.</p>
+    <div class="contact__grid">
+      <div class="contact__body">
+        <h2>카톡 한 줄이면<br>시작합니다.</h2>
+        <div class="contact__ways">
+          <a class="kbtn" href="https://open.kakao.com/o/sjAtvLKh" target="_blank" rel="noopener">카카오톡 오픈채팅 열기<span class="kbtn__arw" aria-hidden="true">→</span></a>
+        </div>
+        <a class="contact__mail" href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com<span>MAIL</span></a>
+        <p class="contact__note">가게 이름과 업종, 하려는 일을 한 줄로 적어 주세요. 오픈채팅은 바로 답하고, 메일은 영업일 안에 견적과 일정을 함께 드립니다.</p>
+      </div>
+      <figure class="qrcard">
+        <img src="assets/kakao-openchat-qr.jpg" alt="카카오톡 오픈채팅으로 연결되는 QR 코드" width="800" height="800" loading="lazy">
+        <figcaption class="qrcard__cap">휴대폰 카메라로 스캔<br>open.kakao.com/o/sjAtvLKh</figcaption>
+      </figure>
+    </div>
   </section>
 </main>
 
 <footer class="foot">
   <div class="foot__base">
-    <span>JD STUDIO · 구리 / 서울 · 2026</span>
+    <span>LONGSNAKE · 구리 / 서울 · 2026</span>
     <span>샘플 페이지입니다 · 사진은 생성 이미지, 상호와 후기는 예시</span>
-    <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a>
+    <a href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a>
   </div>
 </footer>
 

@@ -6,16 +6,16 @@
 
 ## 사이트 성격
 
-- 이 페이지는 **JD STUDIO의 「SEO·AEO·GEO + 웹블로그」 패키지 샘플**입니다. 상호(윤슬 세무회계), 인물, 금액, 실적은 예시이며 실제 사무소가 아닙니다.
+- 이 페이지는 **LONGSNAKE의 「SEO·AEO·GEO + 웹블로그」 패키지 샘플**입니다. 상호(윤슬 세무회계), 인물, 금액, 실적은 예시이며 실제 사무소가 아닙니다.
 - 세법 내용은 2026년 11월 기준으로 작성했고, 개별 사안의 최종 판단은 장부와 계약 내용에 따라 달라집니다.
-- 제작·문의: mashiaro@naver.com
+- 제작·문의: longsnake.kr@gmail.com
 
 ## 주요 페이지
 
 - [홈 · 상담 분야·칼럼·FAQ](https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/): 기장, 절세 진단, 법인 전환 검토, 세무조사 대응의 범위와 가격.
 - [칼럼 목록](https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/#column): 웹문서 3편.
 - [자주 묻는 질문](https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/#faq): 상담 방식, 기장료 산정, 지역, 세무조사 대응.
-- [상담](https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/#contact): mashiaro@naver.com
+- [상담](https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/#contact): longsnake.kr@gmail.com
 
 ## 상담 분야와 가격
 

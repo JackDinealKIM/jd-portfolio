@@ -590,6 +590,31 @@ table{border-collapse:collapse;width:100%}
   .site--clay .cl-work__fig{aspect-ratio:4/3}
 }
 
+/* ---------- 제작 문의 (포트폴리오 프레임) ---------- */
+.pf{background:#F2EFE9;color:#17140F;border-top:1px solid rgba(23,20,15,.16)}
+.pf__in{max-width:1200px;margin:0 auto;padding:clamp(30px,4vw,52px) clamp(20px,4vw,40px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,3.4vw,44px);align-items:center}
+.pf__kick{font-family:"Index Mono",ui-monospace,monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#6D6456}
+.pf__title{margin-top:10px;font-family:"Editorial Serif",serif;font-weight:400;font-size:clamp(19px,2.2vw,26px);line-height:1.42;letter-spacing:-.02em;word-break:keep-all}
+.pf__title b{font-weight:400;color:#9A4E2B}
+.pf__desc{margin-top:10px;font-size:12.5px;line-height:1.8;color:#5C5449;max-width:54ch}
+.pf__acts{display:flex;align-items:center;gap:16px 20px;flex-wrap:wrap;margin-top:18px}
+.pf__btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:#FEE500;color:#191600;border:1px solid #FEE500;font-size:13px;font-weight:600;text-decoration:none;transition:background .3s var(--ease),border-color .3s var(--ease)}
+.pf__btn:hover{background:#FFEA5C;border-color:#FFEA5C}
+.pf__mail{font-size:12.5px;text-decoration:none;border-bottom:1px solid rgba(23,20,15,.35);padding-bottom:2px;transition:color .3s var(--ease),border-color .3s var(--ease)}
+.pf__mail:hover{color:#9A4E2B;border-color:#9A4E2B}
+.pf__back{font-family:"Index Mono",ui-monospace,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#6D6456;border-bottom:1px solid rgba(23,20,15,.18);padding-bottom:2px}
+.pf__back:hover{color:#17140F;border-color:#17140F}
+.pf__qr{display:flex;flex-direction:column;align-items:center;gap:9px;padding:13px 13px 11px;background:#fff;border:1px solid rgba(23,20,15,.16)}
+.pf__qr img{width:134px;height:134px;object-fit:contain}
+.pf__qr span{font-family:"Index Mono",ui-monospace,monospace;font-size:8.5px;line-height:1.7;letter-spacing:.06em;color:#6D6456;text-align:center}
+@media (max-width:720px){
+  .pf__in{grid-template-columns:1fr;gap:20px}
+  .pf__qr{flex-direction:row;align-items:center;justify-content:flex-start;gap:14px;padding:10px}
+  .pf__qr img{width:78px;height:78px;flex:none}
+  .pf__qr span{text-align:left;font-size:9px}
+  .pf__btn{width:100%;justify-content:space-between}
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   [data-rv]{opacity:1;transform:none;transition:none}
@@ -604,7 +629,26 @@ table{border-collapse:collapse;width:100%}
 <body data-ind="cafe">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <div id="app"></div>
-<noscript><div style="max-width:720px;margin:0 auto;padding:120px 24px;font-size:14px;line-height:1.9">이 샘플은 업종 전환에 자바스크립트를 사용합니다. 스크립트를 켜면 카페·식당, 인테리어·설비, 학원·공방 세 페이지를 볼 수 있습니다. 제작 문의: mashiaro@naver.com</div></noscript>
+
+<aside class="pf" aria-label="제작 문의">
+  <div class="pf__in">
+    <div>
+      <p class="pf__kick">Portfolio · LONGSNAKE</p>
+      <p class="pf__title">이런 홈페이지를 <b>9.9만 원</b>부터 만듭니다.</p>
+      <p class="pf__desc">업종과 하려는 일만 알려 주시면 첫 화면 시안과 견적을 함께 보내 드립니다. 카카오톡 오픈채팅이 가장 빠릅니다.</p>
+      <div class="pf__acts">
+        <a class="pf__btn" href="https://open.kakao.com/o/sjAtvLKh" target="_blank" rel="noopener">카카오톡 오픈채팅 <span aria-hidden="true">→</span></a>
+        <a class="pf__mail" href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a>
+        <a class="pf__back" href="../">포트폴리오 전체 보기</a>
+      </div>
+    </div>
+    <div class="pf__qr">
+      <img src="../assets/kakao-openchat-qr.jpg" alt="카카오톡 오픈채팅 QR 코드" width="800" height="800" loading="lazy">
+      <span>카메라로 스캔<br>open.kakao.com/o/sjAtvLKh</span>
+    </div>
+  </div>
+</aside>
+<noscript><div style="max-width:720px;margin:0 auto;padding:120px 24px;font-size:14px;line-height:1.9">이 샘플은 업종 전환에 자바스크립트를 사용합니다. 스크립트를 켜면 카페·식당, 인테리어·설비, 학원·공방 세 페이지를 볼 수 있습니다. 제작 문의: longsnake.kr@gmail.com</div></noscript>
 <div aria-live="polite" class="sr-only" id="live"></div>
 <script src="assets/vendor/three.min.js" defer></script>
 <script defer>
@@ -905,7 +949,7 @@ table{border-collapse:collapse;width:100%}
       '<header class="cf-bar">' +
         '<a class="cf-mark" href="#cf-top"><span class="cf-mark__ko">' + d.markKo + '</span><span class="cf-mark__en">' + d.markEn + '</span></a>' +
         sw() +
-        '<div class="cf-bar__meta"><span>샘플 <b>9.9만 원</b></span><a class="cf-bar__mail" href="mailto:mashiaro@naver.com">제작 문의</a></div>' +
+        '<div class="cf-bar__meta"><span>샘플 <b>9.9만 원</b></span><a class="cf-bar__mail" href="mailto:longsnake.kr@gmail.com">제작 문의</a></div>' +
       '</header>' +
       '<main id="main">' +
         '<div class="cf-issue"><div class="cf-issue__in">' +
@@ -921,7 +965,7 @@ table{border-collapse:collapse;width:100%}
               '<button class="cf-btn" data-sample>' + d.cta.primary + ' <i>→</i></button>' +
               '<button class="cf-link" data-sample>' + d.cta.secondary + '</button>' +
             '</div>' +
-            '<p class="cf-note" id="note" hidden>이 페이지는 <strong>9.9만 원 샘플</strong>입니다. 실제 납품 시 이 버튼은 매장의 예약·전화·카카오톡 채널로 연결됩니다. 제작 문의 <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a></p>' +
+            '<p class="cf-note" id="note" hidden>이 페이지는 <strong>9.9만 원 샘플</strong>입니다. 실제 납품 시 이 버튼은 매장의 예약·전화·카카오톡 채널로 연결됩니다. 제작 문의 <a href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a></p>' +
             '<ul class="cf-facts">' + d.facts.map(function(f){ return '<li><span class="k">' + f.k + '</span><span class="v">' + f.v + '</span></li>'; }).join("") + '</ul>' +
           '</div>' +
           '<figure class="cf-hero__media" data-rv>' +
@@ -989,9 +1033,9 @@ table{border-collapse:collapse;width:100%}
         '<div class="cf-foot__grid">' +
           '<p class="cf-foot__addr">' + d.markKo + '<br>' + d.visit.rows[0].v + '<br>' + d.visit.rows[4].v + '</p>' +
           '<p class="cf-foot__note">' + d.footNote + '</p>' +
-          '<p class="cf-foot__credit"><b>9.9만 원 원페이지 홈페이지 샘플</b><br>제작 문의 <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a></p>' +
+          '<p class="cf-foot__credit"><b>9.9만 원 원페이지 홈페이지 샘플</b><br>제작 문의 <a href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a></p>' +
         '</div>' +
-        '<div class="cf-foot__base"><span>샘플 01 · ' + d.indName + '</span><span>© 2026 JD STUDIO</span></div>' +
+        '<div class="cf-foot__base"><span>샘플 01 · ' + d.indName + '</span><span>© 2026 LONGSNAKE</span></div>' +
       '</footer>' +
     '</div>';
   }
@@ -1031,7 +1075,7 @@ table{border-collapse:collapse;width:100%}
                 '<button class="in-btn" data-sample>' + d.cta.primary + ' <i>→</i></button>' +
                 '<button class="in-btn in-btn--ghost" data-sample>' + d.cta.secondary + '</button>' +
               '</div>' +
-              '<p class="in-note" id="note" hidden>이 페이지는 9.9만 원 제작 샘플입니다. 실제 납품 시 이 버튼은 상담 전화·카카오톡 채널·견적 폼으로 연결됩니다. 제작 문의 <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a></p>' +
+              '<p class="in-note" id="note" hidden>이 페이지는 9.9만 원 제작 샘플입니다. 실제 납품 시 이 버튼은 상담 전화·카카오톡 채널·견적 폼으로 연결됩니다. 제작 문의 <a href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a></p>' +
             '</div>' +
             '<aside class="in-hero__side">' +
               '<dl>' + d.side.map(function(s){ return '<div><dt>' + s.k + '</dt><dd>' + s.v + '</dd></div>'; }).join("") + '</dl>' +
@@ -1123,7 +1167,7 @@ table{border-collapse:collapse;width:100%}
             d.contact.grid.map(function(g){ return '<div><dt>' + g[0] + '</dt><dd>' + g[1] + '</dd></div>'; }).join("") +
             '<p class="in-foot__note">' + d.contact.note + '</p>' +
           '</dl>' +
-          '<div class="in-foot__base"><span>샘플 02 · ' + d.indName + '</span><span>제작 문의 mashiaro@naver.com</span><span>© 2026 JD STUDIO</span></div>' +
+          '<div class="in-foot__base"><span>샘플 02 · ' + d.indName + '</span><span>제작 문의 longsnake.kr@gmail.com</span><span>© 2026 LONGSNAKE</span></div>' +
         '</div>' +
       '</footer>' +
     '</div>';
@@ -1181,7 +1225,7 @@ table{border-collapse:collapse;width:100%}
             '<button class="cl-btn" data-sample>' + d.cta.primary + ' <i>→</i></button>' +
             '<button class="cl-link" data-sample>' + d.cta.secondary + '</button>' +
           '</div>' +
-          '<p class="cl-note" id="note" hidden>이 페이지는 9.9만 원 제작 샘플입니다. 실제 납품 시 이 버튼은 네이버 예약·전화·카카오톡 채널로 연결됩니다. 제작 문의 <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a></p>' +
+          '<p class="cl-note" id="note" hidden>이 페이지는 9.9만 원 제작 샘플입니다. 실제 납품 시 이 버튼은 네이버 예약·전화·카카오톡 채널로 연결됩니다. 제작 문의 <a href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a></p>' +
           '<figure class="cl-hero__fig">' +
             '<div class="cl-media" id="heroMedia"><img src="' + d.hero.src + '" alt="' + d.hero.alt + '" fetchpriority="high"></div>' +
             '<figcaption class="cl-cap"><span>' + d.cap[0] + '</span><span>' + d.cap[1] + '</span></figcaption>' +
@@ -1221,8 +1265,8 @@ table{border-collapse:collapse;width:100%}
             d.visit.rows.map(function(r){ return '<span>' + r[1] + '</span>'; }).join("") +
           '</div>' +
           '<p class="cl-foot__note">' + d.visit.note + '</p>' +
-          '<p class="cl-foot__credit"><b>9.9만 원 원페이지 홈페이지 샘플</b> · 제작 문의 <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a></p>' +
-          '<div class="cl-foot__base"><span>샘플 03 · ' + d.indName + '</span><span>© 2026 JD STUDIO</span></div>' +
+          '<p class="cl-foot__credit"><b>9.9만 원 원페이지 홈페이지 샘플</b> · 제작 문의 <a href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a></p>' +
+          '<div class="cl-foot__base"><span>샘플 03 · ' + d.indName + '</span><span>© 2026 LONGSNAKE</span></div>' +
         '</div>' +
       '</footer>' +
     '</div>';
@@ -1270,7 +1314,7 @@ table{border-collapse:collapse;width:100%}
         var open = n.hidden;
         n.hidden = !open;
         if (open){ n.style.opacity = 0; requestAnimationFrame(function(){ n.style.opacity = 1; }); }
-        live.textContent = "이 페이지는 9.9만 원 제작 샘플입니다. 제작 문의는 mashiaro@naver.com 입니다.";
+        live.textContent = "이 페이지는 9.9만 원 제작 샘플입니다. 제작 문의는 longsnake.kr@gmail.com 입니다.";
       });
     });
   }

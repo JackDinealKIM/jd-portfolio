@@ -1,5 +1,7 @@
 # jd-portfolio
 
+**LONGSNAKE (롱스네이크)** — 소상공인·자영업자를 위한 제작 포트폴리오입니다.
+
 소상공인·자영업자를 위한 **원페이지 홈페이지 / 모바일 청첩장 / SEO·AEO·GEO + 웹블로그 / 업무 자동화 툴** 제작 포트폴리오입니다.
 각 항목은 실제로 열리는 웹 페이지이며, 브라우저에서 바로 동작을 확인할 수 있습니다.
 
@@ -10,7 +12,8 @@
 - 샘플 04: https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/
 - 견적서 예시 바로 열기: https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/?sample=interior
 - SEO 진단 패널: https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/?insp=1
-- 문의: mashiaro@naver.com
+- 문의: [카카오톡 오픈채팅](https://open.kakao.com/o/sjAtvLKh) · longsnake.kr@gmail.com
+- 문의 QR: [`assets/kakao-openchat-qr.jpg`](assets/kakao-openchat-qr.jpg) (인쇄·게시용, 전화번호는 공개하지 않습니다)
 
 ## 작업물
 
@@ -43,6 +46,7 @@
 ```
 jd-portfolio/
 ├── index.html                  # 스튜디오 인덱스 (작업 · 가격 · 과정 · 문의)
+├── assets/kakao-openchat-qr.jpg # 카카오톡 오픈채팅 QR (모든 페이지에서 ../assets/로 참조)
 ├── robots.txt · sitemap.xml    # 검색엔진용 (전체 페이지)
 ├── 01-store-landing/
 │   ├── index.html              # 3업종 전환 원페이지 샘플

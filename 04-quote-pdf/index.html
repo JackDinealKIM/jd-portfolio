@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#f8f7f4">
 <link rel="canonical" href="https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="JD STUDIO">
+<meta property="og:site_name" content="LONGSNAKE">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="1초 견적서 · 사장님을 위한 A4 견적서 PDF 발급기">
 <meta property="og:description" content="엑셀도 한글도 필요 없습니다. 품목을 넣으면 A4 견적서 한 장이 바로 인쇄됩니다. 부가세·할인·직인까지.">
@@ -253,6 +253,11 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
 .outreach__cta{display:flex;align-items:center;gap:18px;margin-top:24px;flex-wrap:wrap}
 .outreach__mail{font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
 .outreach__mail:hover{color:var(--accent);border-color:var(--accent)}
+.outreach__kakao{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:#FEE500;color:#191600;border:1px solid #FEE500;font-size:13px;font-weight:600;text-decoration:none;transition:background .3s var(--ease),border-color .3s var(--ease)}
+.outreach__kakao:hover{background:#FFEA5C;border-color:#FFEA5C}
+.outreach__qr{display:inline-flex;align-items:center;gap:14px;margin-top:20px;padding:8px 16px 8px 8px;background:#fff;border:1px solid var(--line)}
+.outreach__qr img{width:96px;height:96px;object-fit:contain;flex:none}
+.outreach__qr span{font-family:var(--mono);font-size:8.5px;line-height:1.85;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
 .outreach__dm{font-size:12.5px;color:var(--muted)}
 
 .foot{max-width:1580px;margin:0 auto;padding:22px clamp(20px,3vw,32px) 34px;display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-between;border-left:1px solid var(--line);border-right:1px solid var(--line);font-size:11px;color:var(--muted)}
@@ -295,6 +300,7 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
   @page{size:A4;margin:0}
   html,body{background:#fff!important;margin:0!important;padding:0!important;width:210mm}
   .bar,.panel,.outreach,.foot,.stage__bar,.skip,.noscript,.mobar{display:none!important}
+  .outreach__qr,.outreach__kakao{display:none!important}
   .app{display:block!important;max-width:none;margin:0;padding:0;border:0;min-height:0}
   .stage{padding:0!important;border:0!important;background:#fff!important;display:block}
   .stage__inner{position:static!important;display:block!important;height:auto!important;min-height:0!important}
@@ -308,7 +314,7 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
 <a class="skip" href="#panel">입력란으로 건너뛰기</a>
 
 <header class="bar">
-  <a class="bar__mark" href="https://jackdinealkim.github.io/jd-portfolio/"><b>JD</b><span>STUDIO</span></a>
+  <a class="bar__mark" href="https://jackdinealkim.github.io/jd-portfolio/"><b>롱스네이크</b><span>LONGSNAKE</span></a>
   <span class="bar__div" aria-hidden="true"></span>
   <span class="bar__name">1초 견적서</span>
   <a class="bar__back" href="https://jackdinealkim.github.io/jd-portfolio/">작업 목록</a>
@@ -499,7 +505,7 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
 <section class="outreach" aria-label="맞춤 제작 안내">
   <figure class="outreach__fig">
     <img src="assets/img/desk.webp" alt="견적서와 만년필, 직인이 놓인 사무실 책상" loading="lazy" width="1600" height="1067">
-    <figcaption class="outreach__cap">JD STUDIO · DOCUMENT TOOL</figcaption>
+    <figcaption class="outreach__cap">LONGSNAKE · DOCUMENT TOOL</figcaption>
   </figure>
   <div class="outreach__body">
     <p class="eyebrow">Custom build</p>
@@ -512,8 +518,12 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
       <li><i>03</i>품목·단가 관리와 월별 견적 집계</li>
     </ul>
     <div class="outreach__cta">
-      <a class="outreach__mail" href="mailto:mashiaro@naver.com?subject=%EA%B2%AC%EC%A0%81%EC%84%9C%20%EB%A7%9E%EC%B6%A4%20%EC%A0%9C%EC%9E%91%20%EB%AC%B8%EC%9D%98">mashiaro@naver.com</a>
-      <span class="outreach__dm">또는 스레드 DM</span>
+      <a class="outreach__kakao" href="https://open.kakao.com/o/sjAtvLKh" target="_blank" rel="noopener">카카오톡 오픈채팅 <span aria-hidden="true">→</span></a>
+      <a class="outreach__mail" href="mailto:longsnake.kr@gmail.com?subject=%EA%B2%AC%EC%A0%81%EC%84%9C%20%EB%A7%9E%EC%B6%A4%20%EC%A0%9C%EC%9E%91%20%EB%AC%B8%EC%9D%98">longsnake.kr@gmail.com</a>
+    </div>
+    <div class="outreach__qr">
+      <img src="../assets/kakao-openchat-qr.jpg" alt="카카오톡 오픈채팅 QR 코드" width="800" height="800" loading="lazy">
+      <span>카메라로 스캔<br>open.kakao.com/o/sjAtvLKh</span>
     </div>
   </div>
 </section>
@@ -524,9 +534,9 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
 </div>
 
 <footer class="foot">
-  <span>JD STUDIO · 구리 / 서울 · 2026</span>
+  <span>LONGSNAKE · 구리 / 서울 · 2026</span>
   <span>샘플 페이지입니다. 상호·사업자번호·금액은 예시이고, 입력한 내용은 이 브라우저에만 남습니다.</span>
-  <a href="mailto:mashiaro@naver.com">mashiaro@naver.com</a>
+  <a href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a>
 </footer>
 
 <noscript><p class="noscript">이 견적서 발급기는 자바스크립트로 동작합니다. 브라우저에서 자바스크립트를 켜 주세요.</p></noscript>
@@ -542,7 +552,7 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
   "inLanguage": "ko",
   "description": "상호와 품목을 입력해 부가세·할인·직인이 반영된 A4 견적서를 만들고 인쇄하거나 PDF로 저장하는 무료 도구입니다.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
-  "publisher": { "@type": "Organization", "name": "JD STUDIO", "email": "mashiaro@naver.com" }
+  "publisher": { "@type": "Organization", "name": "LONGSNAKE", "email": "longsnake.kr@gmail.com" }
 }
 </script>
 
@@ -788,7 +798,7 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
       note: "부가세 별도. 자재비 포함, 철거 폐기물 처리비 포함.\n계약금 30% / 착공 시 40% / 준공 후 30%.\n공사 기간은 착공일로부터 12일 예정입니다.",
       fields: {
         supplierName: "정도인테리어", supplierOwner: "김성도", supplierBizno: "206-14-38210",
-        supplierAddr: "경기도 구리시 인창동 675-1, 1층", supplierTel: "010-2758-8563", supplierEmail: "mashiaro@naver.com",
+        supplierAddr: "경기도 구리시 인창동 675-1, 1층", supplierTel: "010-0000-0000", supplierEmail: "longsnake.kr@gmail.com",
         clientName: "김민수 (인창동 24평)", clientOwner: "김민수", clientAddr: "경기도 구리시 인창동 672-3, 105동 802호", clientTel: "010-3421-7788",
         quoteNo: "Q-2026-1125-01", note: ""
       },
@@ -805,7 +815,7 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
       note: "부가세 별도. 시안 2종 제안 후 1종 확정.\n수정 2회 포함, 추가 수정은 회당 8만 원입니다.\n최종 원본 파일(AI·PSD·Figma) 인계 포함.",
       fields: {
         supplierName: "스튜디오 무명", supplierOwner: "이하나", supplierBizno: "412-87-01923",
-        supplierAddr: "서울 마포구 성미산로 31, 2층", supplierTel: "010-8842-1170", supplierEmail: "mashiaro@naver.com",
+        supplierAddr: "서울 마포구 성미산로 31, 2층", supplierTel: "010-0000-0000", supplierEmail: "longsnake.kr@gmail.com",
         clientName: "주식회사 온도", clientOwner: "최유진", clientAddr: "서울 성동구 성수이로 51, 3층", clientTel: "02-462-3381",
         quoteNo: "Q-2026-1125-02", note: ""
       },
@@ -820,7 +830,7 @@ textarea.in{resize:vertical;min-height:58px;padding:8px 0;line-height:1.6}
       note: "부가세 포함. 자재·인건비 일체 포함 견적입니다.\n일정은 발주 후 5일 이내 착수, 2일 시공.\n하자 보증 1년.",
       fields: {
         supplierName: "대성설비", supplierOwner: "박정호", supplierBizno: "138-22-60417",
-        supplierAddr: "경기도 남양주시 다산중앙로 82, 1층", supplierTel: "010-5517-2043", supplierEmail: "mashiaro@naver.com",
+        supplierAddr: "경기도 남양주시 다산중앙로 82, 1층", supplierTel: "010-0000-0000", supplierEmail: "longsnake.kr@gmail.com",
         clientName: "온기커피 인창점", clientOwner: "정다운", clientAddr: "경기도 구리시 인창동 669-2, 1층", clientTel: "031-551-2204",
         quoteNo: "Q-2026-1125-03", note: ""
       },
