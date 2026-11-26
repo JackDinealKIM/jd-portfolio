@@ -2,7 +2,7 @@
 
 **LONGSNAKE (롱스네이크)** — 소상공인·자영업자를 위한 제작 포트폴리오입니다.
 
-소상공인·자영업자를 위한 **원페이지 홈페이지 / 모바일 청첩장 / SEO·AEO·GEO + 웹블로그 / 업무 자동화 툴** 제작 포트폴리오입니다.
+소상공인·자영업자를 위한 **원페이지 홈페이지 / 모바일 청첩장 / SEO·AEO·GEO + 웹블로그 / 업무 자동화 툴 / 블로그 초안 생성기** 제작 포트폴리오입니다.
 각 항목은 실제로 열리는 웹 페이지이며, 브라우저에서 바로 동작을 확인할 수 있습니다.
 
 - 라이브: https://jackdinealkim.github.io/jd-portfolio/
@@ -10,6 +10,7 @@
 - 샘플 02: https://jackdinealkim.github.io/jd-portfolio/02-wedding-invite/
 - 샘플 03: https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/
 - 샘플 04: https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/
+- 샘플 05: https://jackdinealkim.github.io/jd-portfolio/05-blog-auto/
 - 견적서 예시 바로 열기: https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/?sample=interior
 - SEO 진단 패널: https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/?insp=1
 - 문의: [카카오톡 오픈채팅](https://open.kakao.com/o/sjAtvLKh) · longsnake.kr@gmail.com
@@ -23,6 +24,7 @@
 | 02 | 모바일 청첩장 (3종) | 클래식 레터 / 필름 에디토리얼 / 가든 보태니컬. 달력·D-day·갤러리·오시는 길·계좌 복사·공유 포함. | [`02-wedding-invite/`](02-wedding-invite/) |
 | 03 | SEO·AEO·GEO + 웹블로그 홈페이지 | 세무·절세 컨설팅 「윤슬 세무회계」. 구조화 데이터 5개(AccountingService·FAQPage·Article×3), llms.txt·sitemap.xml, 실제 칼럼 3편, 고객용 SEO·AEO 진단 패널. | [`03-seo-webblog/`](03-seo-webblog/) |
 | 04 | 1초 견적서 · A4 PDF 발급기 | 상호·품목을 입력하면 A4 견적서가 실시간으로 완성. 품목 행 추가/삭제, 부가세 별도·포함, 할인, 비고, 직인 PNG, 한글 금액 표기. 인쇄 시 A4 한 장만 출력되고 PDF로 저장됩니다. 업종 예시 3종(인테리어·디자인 외주·설비 시공). | [`04-quote-pdf/`](04-quote-pdf/) |
+| 05 | 블로그 초안 생성기 (4업종) | 업종+키워드 한 줄로 제목 3안(검색·경험·정보형), AEO 3줄 요약, 소제목 목차, 사진 촬영 가이드 5컷, 발행 전 체크리스트를 생성·복사. 대괄호 빈칸은 매장 정보로 채우는 자리이고, 입력값은 전송·저장하지 않습니다. | [`05-blog-auto/`](05-blog-auto/) |
 
 업종별 직접 링크: [`?ind=cafe`](01-store-landing/?ind=cafe) · [`?ind=interior`](01-store-landing/?ind=interior) · [`?ind=clay`](01-store-landing/?ind=clay)
 
@@ -32,6 +34,8 @@
 
 견적서 업종 예시: [`?sample=interior`](04-quote-pdf/?sample=interior) 인테리어 · [`?sample=design`](04-quote-pdf/?sample=design) 디자인 외주 · [`?sample=facility`](04-quote-pdf/?sample=facility) 설비 시공
 
+블로그 초안 업종 예시: [`?ind=restaurant`](05-blog-auto/?ind=restaurant) 식당·카페 · [`?ind=interior`](05-blog-auto/?ind=interior) 인테리어 · [`?ind=build`](05-blog-auto/?ind=build) 시공·설비 · [`?ind=workshop`](05-blog-auto/?ind=workshop) 공방·클래스
+
 ## 가격
 
 | # | 상품 | 범위 | 기간 |
@@ -40,6 +44,7 @@
 | 02 | 모바일 청첩장 | 템플릿 3종 중 선택, 호스팅 1년 포함 · 10,000원 | 1일 |
 | 03 | SEO·AEO·GEO + 웹블로그 홈페이지 | 검색 구조(구조화 데이터·llms.txt·사이트맵) + 칼럼 3편 + 진단 패널 · 290,000원~ | 3~5일 |
 | 04 | 견적서·자동화 툴 | 견적서·거래명세서 발급기, 대시보드, 단일 기능 툴 · 149,000원~ | 2~3일 |
+| 05 | 블로그 자동화 세팅 | 업종 맞춤 제목·목차 템플릿, 초안 생성기, 촬영 목록, 발행 순서표, 수정 1회 · 149,000원~ | 2~3일 |
 
 ## 구성
 
@@ -77,6 +82,12 @@ jd-portfolio/
 │   │   ├── img/*.webp          # 책상 실사 1장 + 썸네일 3장
 │   │   └── fonts/              # Pretendard 한글 2종 · 세리프 서브셋 (woff2)
 │   └── README.md
+├── 05-blog-auto/
+│   ├── index.html              # 블로그 초안 생성기 (4업종 · ?ind= · ?kw=)
+│   ├── assets/
+│   │   ├── img/*.webp          # 실사 2장 + 포트폴리오 썸네일 3장
+│   │   └── fonts/              # Pretendard 2종 · 세리프 · 모노 서브셋 (woff2)
+│   └── README.md
 └── README.md
 ```
 
@@ -97,6 +108,16 @@ jd-portfolio/
 5. **SEO·AEO 진단 패널** — 헤더·푸터의 작은 버튼(또는 `?insp=1`)으로 열리는 서랍. 이 페이지의 JSON-LD를 실제로 파싱해 타입·키 수·원문을 보여주고, llms.txt·sitemap.xml·robots.txt를 실시간으로 받아 HTTP 상태와 바이트를 표시하며, h1·alt·표·가로 스크롤·LCP 우선순위를 그 자리에서 측정합니다.
 6. **웹폰트·이미지** — 실사 이미지 5장(WebP), 자체 호스팅 woff2, LCP 이미지 `fetchpriority="high"`.
 
+### 05 블로그 초안 생성기에서 실제로 구현한 것
+
+1. **업종별 템플릿 4종** — 식당·카페 / 인테리어 / 시공·설비 / 공방·클래스. 제목·요약·목차(H2·H3)·촬영 가이드·체크리스트가 업종마다 다르게 정의되어 있습니다.
+2. **제목 3안** — 검색형(키워드 앞배치) · 경험형 · 정보형. 생성된 제목의 글자 수를 세어 40자 초과를 표시합니다.
+3. **AEO 3줄 요약** — 무엇을 하는 곳인지, 조건은 무엇인지, 어떻게 확인하는지 순서. 사실만 넣고 확인이 필요한 값은 `[대괄호]`로 비워 둡니다(가격·후기 날조 방지).
+4. **촬영 가이드 5컷** — 각도·거리·광원·프레임에 무엇을 넣을지 업종별로 지정. 전·후 사진은 같은 자리에서 찍도록 안내합니다.
+5. **복사** — 블록별 복사와 전체 복사. `file://` 환경에서도 동작하도록 `execCommand` 폴백을 넣었습니다.
+6. **개인정보** — 입력값은 서버로 보내지 않고 `localStorage`에도 남기지 않습니다. 조사 처리(은/는)는 받침을 계산해 붙입니다.
+7. **웹폰트·이미지** — 실사 이미지 2장(WebP)과 QR, 자체 호스팅 woff2 4종.
+
 ## 항목 추가 방법
 
 1. `03-.../index.html` 처럼 새 폴더를 만들고 페이지를 넣습니다.
@@ -109,3 +130,4 @@ jd-portfolio/
 샘플에 쓰인 사진은 이미지 생성 도구로 만든 예시입니다. 실제 납품 시 매장 사진으로 교체합니다.
 03 샘플의 상호·인물·금액과 세법 서술은 예시이며, 실제 사무소가 아닙니다.
 04 견적서의 상호·사업자번호·금액도 예시입니다. 입력값은 서버로 전송되지 않고 브라우저(localStorage)에만 남습니다.
+05 블로그 초안의 상호·가격·기간도 예시이며, 입력값은 어디에도 저장되지 않습니다.
