@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이번 주 작업 6종 · 9.9만 원부터 48시간 납품 — 롱스네이크</title>
+<meta name="description" content="2026년 11월 24일부터 28일까지 만든 소상공인 홈페이지·청첩장·견적서 발급기·블로그 초안 생성기·마진 계산기 6종을 한 번에. 전부 지금 열리는 페이지이고, 원페이지 9.9만 원 48시간부터 고정 스펙으로 받습니다.">
+<meta name="theme-color" content="#F2EFE9">
+<meta property="og:type" content="website">
+<meta property="og:title" content="이번 주 작업 6종 · 9.9만 원부터 48시간 납품">
+<meta property="og:description" content="닷새 동안 만든 여섯 개. 목업 없이 전부 열리는 페이지입니다. 원페이지 9.9만 원 / 자동화 툴 14.9만 원 / SEO·웹블로그 24.9만 원.">
+<meta property="og:image" content="assets/img/shot-01.webp">
+<link rel="icon" href="../01-store-landing/assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../01-store-landing/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "롱스네이크 2026년 11월 넷째 주 제작물",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"업종별 원페이지 홈페이지 3종","url":"https://jackdinealkim.github.io/jd-portfolio/01-store-landing/"},
+    {"@type":"ListItem","position":2,"name":"모바일 청첩장 3종","url":"https://jackdinealkim.github.io/jd-portfolio/02-wedding-invite/"},
+    {"@type":"ListItem","position":3,"name":"SEO·웹블로그 홈페이지","url":"https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/"},
+    {"@type":"ListItem","position":4,"name":"1초 견적서 A4 PDF 발급기","url":"https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/"},
+    {"@type":"ListItem","position":5,"name":"블로그 초안 생성기","url":"https://jackdinealkim.github.io/jd-portfolio/05-blog-auto/"},
+    {"@type":"ListItem","position":6,"name":"마진·정산 계산기","url":"https://jackdinealkim.github.io/jd-portfolio/06-margin-calc/"}
+  ],
+  "provider": {"@type":"Organization","name":"LONGSNAKE","email":"longsnake.kr@gmail.com","url":"https://jackdinealkim.github.io/jd-portfolio/"}
+}
+</script>
+<style>
+@font-face{font-family:"Editorial Serif";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/serif-regular.woff2") format("woff2")}
+@font-face{font-family:"UI Sans";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/sans-regular.woff2") format("woff2")}
+@font-face{font-family:"UI Sans";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/sans-medium.woff2") format("woff2")}
+@font-face{font-family:"UI Sans";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/sans-semibold.woff2") format("woff2")}
+@font-face{font-family:"Index Mono";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/mono-regular.woff2") format("woff2")}
+
+:root{
+  --paper:#F2EFE9;
+  --paper-soft:#E8E4DA;
+  --ink:#17140F;
+  --ink-2:#3C372F;
+  --muted:#6D6456;
+  --line:rgba(23,20,15,.18);
+  --line-soft:rgba(23,20,15,.10);
+  --accent:#9A4E2B;
+  --serif:"Editorial Serif","Noto Serif KR","Nanum Myeongjo",serif;
+  --sans:"UI Sans","Pretendard","Apple SD Gothic Neo",system-ui,sans-serif;
+  --mono:"Index Mono","IBM Plex Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --pad:clamp(20px,4.4vw,64px);
+  --gut:clamp(16px,2.2vw,32px);
+  --maxw:1408px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;overflow-x:clip;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,h4,p,figure,dl,dd,dt{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:12px 16px;z-index:100}
+.skip:focus{left:16px;top:16px}
+
+.bar{position:fixed;z-index:50;top:14px;left:50%;transform:translateX(-50%);width:min(var(--maxw),calc(100% - 28px));display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:10px 14px;border:1px solid var(--line-soft);background:rgba(242,239,233,.86);-webkit-backdrop-filter:blur(18px) saturate(1.05);backdrop-filter:blur(18px) saturate(1.05)}
+.mark{display:flex;align-items:baseline;gap:8px;text-decoration:none;white-space:nowrap}
+.mark b{font-family:var(--serif);font-weight:400;font-size:17px;letter-spacing:.02em}
+.mark span{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--muted)}
+.nav{display:flex;justify-self:center;gap:2px}
+.nav a{position:relative;padding:8px 11px;font-size:13px;font-weight:500;text-decoration:none;color:var(--muted);white-space:nowrap;transition:color .3s var(--ease)}
+.nav a::after{content:"";position:absolute;left:11px;right:11px;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1)}
+.bar__mail{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-soft);padding-bottom:2px;white-space:nowrap}
+.bar__mail:hover{color:var(--ink);border-color:var(--ink)}
+
+main{max-width:var(--maxw);margin:0 auto}
+
+.hero{padding:clamp(100px,12vw,150px) var(--pad) 0}
+.hero__grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);align-items:start}
+.kicker{padding-top:12px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--muted)}
+.hero__text{grid-column:1/9}
+.display{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.5vw,64px);line-height:1.14;letter-spacing:-.03em;margin-top:26px;text-wrap:balance}
+.display span{display:block}
+.display em{font-style:normal;color:var(--accent)}
+.lede{margin-top:24px;max-width:50ch;font-size:15px;line-height:1.85;color:var(--ink-2);text-wrap:pretty}
+.acts{display:flex;align-items:center;gap:22px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:11px;padding:14px 20px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);font-size:14px;font-weight:600;text-decoration:none;transition:transform .3s var(--ease),background .3s var(--ease),border-color .3s var(--ease)}
+.btn:hover{transform:translateY(-2px);background:var(--accent);border-color:var(--accent);color:#F7F3EA}
+.btn__arw{font-family:var(--mono);font-size:11px;font-weight:400;opacity:.75}
+.link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--line);padding:2px 0;transition:color .3s var(--ease),border-color .3s var(--ease)}
+.link:hover{color:var(--accent);border-color:var(--accent)}
+.hero__side{grid-column:9/13;padding-top:14px;border-top:1px solid var(--line);margin-top:12px}
+.hero__side>div+div{margin-top:16px}
+.hero__side dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.hero__side dd{margin:5px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+
+/* strip: six screens */
+.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--gut);padding:clamp(40px,5vw,64px) var(--pad) 0;align-items:start}
+.strip a{text-decoration:none;display:block}
+.strip figure{overflow:hidden;background:var(--paper-soft);aspect-ratio:3/4}
+.strip img{width:100%;height:100%;object-fit:cover;object-position:50% 0;transition:transform .9s var(--ease)}
+.strip a:hover img{transform:scale(1.04)}
+.strip figcaption{display:flex;align-items:baseline;gap:7px;margin-top:9px;padding-top:7px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--muted)}
+.strip figcaption b{font-family:var(--serif);font-weight:400;font-size:12.5px;letter-spacing:0;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.strip a:nth-child(1) figure{margin-top:0}
+.strip a:nth-child(2) figure{margin-top:clamp(0px,2.4vw,34px)}
+.strip a:nth-child(3) figure{margin-top:clamp(0px,1vw,14px)}
+.strip a:nth-child(4) figure{margin-top:clamp(0px,3vw,44px)}
+.strip a:nth-child(5) figure{margin-top:clamp(0px,1.4vw,20px)}
+.strip a:nth-child(6) figure{margin-top:clamp(0px,2.8vw,40px)}
+
+.sec{padding:clamp(64px,7.5vw,104px) var(--pad) 0;border-top:1px solid var(--line);margin-top:clamp(56px,7vw,92px)}
+.sec__head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);row-gap:14px;align-items:end;margin-bottom:clamp(30px,4vw,52px)}
+.sec__no{grid-column:1/2;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);padding-bottom:6px}
+.sec__title{grid-column:2/8;font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.9vw,40px);line-height:1.22;letter-spacing:-.025em;text-wrap:balance}
+.sec__desc{grid-column:8/13;color:var(--muted);font-size:13.5px;line-height:1.8;max-width:44ch;text-wrap:pretty}
+
+/* work rows */
+.work{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);row-gap:clamp(20px,3vw,34px);align-items:start;padding-top:clamp(30px,4vw,44px);border-top:1px solid var(--line-soft)}
+.work+.work{margin-top:clamp(48px,6vw,84px)}
+.work__fig{grid-column:1/8;overflow:hidden;background:var(--paper-soft);position:relative;aspect-ratio:16/10}
+.work__fig img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.work__fig::after{content:"";position:absolute;inset:0;border:1px solid rgba(23,20,15,.10);pointer-events:none}
+.work--flip .work__fig{grid-column:6/13;order:2}
+.work--portrait .work__fig{grid-column:2/7;aspect-ratio:4/5}
+.work__body{grid-column:8/13}
+.work--flip .work__body{grid-column:1/6;order:1}
+.work__no{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--accent)}
+.work__body h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2.3vw,32px);line-height:1.24;letter-spacing:-.026em;margin-top:12px}
+.work__body h3 small{display:block;margin-top:9px;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.work__lede{margin-top:16px;font-size:14px;line-height:1.82;color:var(--ink-2);max-width:42ch;text-wrap:pretty}
+.work__list{margin-top:20px;border-top:1px solid var(--line-soft)}
+.work__list li{padding:9px 0;border-bottom:1px solid var(--line-soft);font-size:13px;line-height:1.6;color:var(--muted);display:grid;grid-template-columns:14px 1fr;column-gap:10px}
+.work__list li::before{content:"—";font-family:var(--mono);color:var(--line);font-size:11px;line-height:1.9}
+.work__meta{display:flex;align-items:baseline;gap:14px;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-2)}
+.work__meta .d{color:var(--muted)}
+.work__links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px}
+.work__links a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;color:var(--ink-2);transition:color .3s var(--ease),border-color .3s var(--ease)}
+.work__links a:hover{color:var(--accent);border-color:var(--accent)}
+.work__links a span{font-family:var(--mono);font-size:9.5px;color:var(--muted);margin-right:5px}
+.work__caption{grid-column:1/8;margin-top:10px;display:flex;justify-content:space-between;gap:16px;padding-top:9px;border-top:1px solid var(--line);font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--muted)}
+.work--flip .work__caption{grid-column:6/13;order:3}
+.work__caption span:last-child{text-align:right}
+
+/* offer */
+.offers{display:grid;grid-template-columns:repeat(3,1fr);column-gap:var(--gut);row-gap:26px;align-items:start}
+.offer{border-top:1.5px solid var(--ink);padding-top:16px;display:flex;flex-direction:column}
+.offer__no{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--accent)}
+.offer h3{font-family:var(--serif);font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.25;letter-spacing:-.024em;margin-top:10px}
+.offer__price{font-family:var(--serif);font-size:clamp(30px,3vw,40px);line-height:1;letter-spacing:-.02em;margin-top:14px}
+.offer__price small{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted);margin-left:4px}
+.offer__lead{margin-top:12px;font-size:13px;line-height:1.7;color:var(--ink-2);min-height:3.4em}
+.offer__days{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--accent);margin-top:10px;padding-bottom:12px;border-bottom:1px solid var(--line-soft)}
+.offer dl{margin-top:12px;display:grid;row-gap:12px}
+.offer dt{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--muted)}
+.offer dd{margin-top:4px;font-size:12.5px;line-height:1.66;color:var(--ink-2)}
+.offer dd.out{color:var(--muted)}
+.offers__note{margin-top:clamp(26px,3vw,38px);padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.8;color:var(--muted);max-width:74ch}
+.offers__note b{font-weight:500;color:var(--ink-2)}
+
+/* note / why */
+.why{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);row-gap:22px;align-items:start}
+.why__q{grid-column:1/7}
+.why__q p{font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);line-height:1.42;letter-spacing:-.026em;text-wrap:balance}
+.why__q p+p{margin-top:20px;font-family:var(--sans);font-size:14px;line-height:1.85;letter-spacing:0;color:var(--muted)}
+.why__body{grid-column:8/13}
+.why__body p{font-size:13.5px;line-height:1.85;color:var(--ink-2)}
+.why__body p+p{margin-top:14px}
+.why__body b{font-weight:600}
+.why__list{margin-top:22px;border-top:1px solid var(--line-soft)}
+.why__list div{display:grid;grid-template-columns:82px 1fr;column-gap:14px;padding:10px 0;border-bottom:1px solid var(--line-soft);font-size:12.5px;line-height:1.6}
+.why__list dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--muted);padding-top:3px}
+.why__list dd{color:var(--ink-2)}
+
+/* contact */
+.contact{padding:clamp(64px,8vw,110px) var(--pad) clamp(56px,7vw,88px);border-top:1px solid var(--line);margin-top:clamp(56px,7vw,92px)}
+.contact__kick{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4vw,54px);line-height:1.18;letter-spacing:-.03em;margin-top:18px;max-width:22ch;text-wrap:balance}
+.contact__grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);row-gap:clamp(28px,4vw,44px);align-items:start;margin-top:26px}
+.contact__body{grid-column:1/8}
+.contact__ways{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.kbtn{display:inline-flex;align-items:center;gap:12px;padding:15px 22px;background:#FEE500;color:#191600;border:1px solid #FEE500;font-size:14px;font-weight:600;text-decoration:none;transition:transform .3s var(--ease),background .3s var(--ease),border-color .3s var(--ease)}
+.kbtn:hover{transform:translateY(-2px);background:#FFEA5C;border-color:#FFEA5C}
+.kbtn__arw{font-family:var(--mono);font-size:11px;font-weight:400;opacity:.6}
+.contact__mail{display:inline-flex;align-items:baseline;gap:12px;margin-top:22px;font-family:var(--serif);font-size:clamp(17px,2vw,25px);letter-spacing:-.01em;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:5px;transition:color .3s var(--ease),border-color .3s var(--ease);overflow-wrap:anywhere}
+.contact__mail:hover{color:var(--accent);border-color:var(--accent)}
+.contact__mail span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--muted)}
+.contact__note{margin-top:18px;font-size:13px;line-height:1.8;color:var(--muted);max-width:50ch}
+.qrcard{grid-column:9/13;justify-self:end;width:clamp(170px,18vw,208px);padding:14px 14px 12px;background:#fff;border:1px solid var(--line)}
+.qrcard img{width:100%;height:auto}
+.qrcard__cap{margin-top:11px;padding-top:9px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:9px;line-height:1.75;letter-spacing:.1em;color:var(--muted);word-break:break-all}
+
+.foot{max-width:var(--maxw);margin:0 auto;padding:40px var(--pad) 36px;border-top:1px solid var(--line)}
+.foot__base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;line-height:1.9}
+.foot__base a{text-decoration:none;border-bottom:1px solid var(--line-soft)}
+
+[data-rv]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+[data-rv].on{opacity:1;transform:none}
+
+@media (max-width:1080px){
+  .hero__text{grid-column:1/9}
+  .hero__side{grid-column:9/13}
+  .work__fig,.work--flip .work__fig{grid-column:1/8}
+  .work--portrait .work__fig{grid-column:1/8;aspect-ratio:4/5}
+  .work__body,.work--flip .work__body{grid-column:8/13}
+  .work--flip .work__fig{order:1}
+  .work--flip .work__body{order:2}
+  .work__caption,.work--flip .work__caption{grid-column:1/8;order:3}
+}
+@media (max-width:860px){
+  .bar{grid-template-columns:auto 1fr;gap:8px;padding:8px 10px;top:8px}
+  .bar__mail{display:none}
+  .nav{justify-self:end;gap:0}
+  .nav a{padding:7px 7px;font-size:12px}
+  .hero{padding-top:100px}
+  .hero__grid{grid-template-columns:1fr}
+  .hero__text,.hero__side{grid-column:1/-1}
+  .hero__side{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 14px;margin-top:28px;padding-top:14px}
+  .hero__side>div+div{margin-top:0}
+  .hero__side dd{margin-top:4px;font-size:12px}
+  .display{font-size:clamp(31px,8vw,44px)}
+  .strip{grid-template-columns:repeat(3,1fr);row-gap:20px}
+  .strip a figure{margin-top:0!important}
+  .strip img{object-position:50% 0}
+  .sec__head{grid-template-columns:1fr;row-gap:10px}
+  .sec__no,.sec__title,.sec__desc{grid-column:1/-1}
+  .work{grid-template-columns:1fr}
+  .work__fig,.work__body,.work--flip .work__fig,.work--flip .work__body{grid-column:1/-1;order:1}
+  .work__body{order:2}
+  .work__caption,.work--flip .work__caption{grid-column:1/-1;order:3}
+  .work__lede,.work__body p{max-width:none}
+  .offers{grid-template-columns:1fr;row-gap:34px}
+  .offer__lead{min-height:0}
+  .why{grid-template-columns:1fr}
+  .why__q,.why__body{grid-column:1/-1}
+  .contact__grid{grid-template-columns:1fr;row-gap:24px}
+  .contact__body,.qrcard{grid-column:1/-1}
+  .qrcard{justify-self:stretch;width:100%;display:flex;align-items:center;gap:14px;padding:12px}
+  .qrcard img{width:84px;flex:none}
+  .qrcard__cap{margin-top:0;padding-top:0;border-top:0;flex:1;font-size:9.5px}
+  .kbtn{width:100%;justify-content:space-between;padding:15px 18px}
+}
+@media (max-width:520px){
+  .mark span{display:none}
+  .nav a{padding:7px 5px;font-size:11px}
+  .nav a:nth-child(2){display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  [data-rv]{opacity:1;transform:none;transition:none}
+  .strip a:hover img{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="bar">
+  <a class="mark" href="./"><b>롱스네이크</b><span>LONGSNAKE</span></a>
+  <nav class="nav" aria-label="페이지 안내">
+    <a href="#work">이번 주 작업</a>
+    <a href="#offer">가격</a>
+    <a href="#why">왜 이 가격</a>
+    <a href="#contact">문의</a>
+  </nav>
+  <a class="bar__mail" href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="hero__grid">
+      <div class="hero__text">
+        <p class="kicker">PORTFOLIO · WEEK 47 · 2026.11.24 — 11.28</p>
+        <h1 class="display"><span>닷새에 여섯 개.</span><span>전부 지금 <em>열려</em> 있습니다.</span></h1>
+        <p class="lede">소상공인 홈페이지, 모바일 청첩장, 견적서 발급기, 블로그 초안 생성기, 마진 계산기. 목업 대신 실제로 돌아가는 페이지로 만들었고, 아래 스크린샷은 전부 눌러서 쓸 수 있는 링크입니다.</p>
+        <div class="acts">
+          <a class="btn" href="https://open.kakao.com/o/sjAtvLKh" target="_blank" rel="noopener">카카오톡 오픈채팅 열기<span class="btn__arw" aria-hidden="true">→</span></a>
+          <a class="link" href="../">포트폴리오 전체 보기 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <dl class="hero__side">
+        <div><dt>이번 주</dt><dd>6종 · 5일<br>전부 라이브</dd></div>
+        <div><dt>납품</dt><dd>최소 99,000원<br>48시간부터</dd></div>
+        <div><dt>문의</dt><dd>카카오톡 오픈채팅<br>longsnake.kr@gmail.com</dd></div>
+      </dl>
+    </div>
+
+    <div class="strip">
+      <a href="#work-01"><figure><img src="assets/img/shot-01.webp" alt="카페 원페이지 홈페이지 첫 화면" width="1000" height="1250"></figure><figcaption><b>원페이지</b>01</figcaption></a>
+      <a href="#work-02"><figure><img src="assets/img/shot-02.webp" alt="모바일 청첩장 첫 화면" width="428" height="1520"></figure><figcaption><b>청첩장</b>02</figcaption></a>
+      <a href="#work-03"><figure><img src="assets/img/shot-03.webp" alt="SEO·웹블로그 홈페이지 첫 화면" width="1000" height="1250"></figure><figcaption><b>웹블로그</b>03</figcaption></a>
+      <a href="#work-04"><figure><img src="assets/img/shot-04.webp" alt="견적서 A4 PDF 발급기 화면" width="1000" height="1250"></figure><figcaption><b>견적서</b>04</figcaption></a>
+      <a href="#work-05"><figure><img src="assets/img/shot-05.webp" alt="블로그 초안 생성기 화면" width="1000" height="1250"></figure><figcaption><b>블로그</b>05</figcaption></a>
+      <a href="#work-06"><figure><img src="assets/img/shot-06.webp" alt="마진·정산 계산기 화면" width="1000" height="1250"></figure><figcaption><b>마진</b>06</figcaption></a>
+    </div>
+  </section>
+
+  <section class="sec" id="work">
+    <header class="sec__head">
+      <span class="sec__no">01</span>
+      <h2 class="sec__title">이번 주에 만든 여섯 개</h2>
+      <p class="sec__desc">전부 한 사람이 기획·카피·디자인·퍼블리싱까지 만들었습니다. 각 항목의 링크를 누르면 그 자리에서 바로 동작합니다.</p>
+    </header>
+
+    <article class="work" id="work-01" data-rv>
+      <figure class="work__fig"><img src="assets/img/shot-01.webp" alt="카페 원페이지 홈페이지 데스크톱 화면" width="1000" height="1250" loading="lazy"></figure>
+      <div class="work__body">
+        <p class="work__no">01 / 06</p>
+        <h3>업종별 원페이지 홈페이지<small>Landing · 3 industries</small></h3>
+        <p class="work__lede">가게 하나에 홈페이지 한 장. 상호와 업종을 바꾸면 첫 문장, 메뉴, 사진, 강조색이 함께 바뀝니다. 스마트스토어 링크만 있던 가게가 자기 주소를 갖는 게 목적입니다.</p>
+        <ul class="work__list">
+          <li>첫 화면 · 메뉴 · 후기 · 오시는 길 · 예약 버튼까지 한 장에</li>
+          <li>카페·식당 / 인테리어·설비 / 학원·공방, 세 업종을 각각 다른 레이아웃으로</li>
+          <li>이미 쓰는 네이버 예약·카카오톡 채널로 그대로 연결</li>
+        </ul>
+        <p class="work__meta">99,000원 <span class="d">· 1~2일</span></p>
+        <div class="work__links">
+          <a href="../01-store-landing/">샘플 열기</a>
+          <a href="../01-store-landing/?ind=cafe"><span>01</span>카페·식당</a>
+          <a href="../01-store-landing/?ind=interior"><span>02</span>인테리어·설비</a>
+          <a href="../01-store-landing/?ind=clay"><span>03</span>학원·공방</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work work--portrait" id="work-02" data-rv>
+      <figure class="work__fig"><img src="assets/img/shot-02.webp" alt="모바일 청첩장 필름 에디토리얼 템플릿 화면" width="428" height="1520" loading="lazy"></figure>
+      <div class="work__body">
+        <p class="work__no">02 / 06</p>
+        <h3>모바일 청첩장<small>Wedding · 3 moods</small></h3>
+        <p class="work__lede">이름과 사진, 예식장 정보만 넣으면 링크 하나로 끝납니다. 하객은 앱을 설치하지 않고 카톡으로 받은 링크만 엽니다.</p>
+        <ul class="work__list">
+          <li>달력 · D-day · 갤러리 · 오시는 길 · 계좌 복사 · 공유</li>
+          <li>클래식 레터 / 필름 에디토리얼 / 가든 보태니컬</li>
+          <li>지도 앱 연결과 계좌 복사까지 손대지 않고 되게</li>
+        </ul>
+        <p class="work__meta">10,000원 <span class="d">· 1일</span></p>
+        <div class="work__links">
+          <a href="../02-wedding-invite/">샘플 열기</a>
+          <a href="../02-wedding-invite/?tpl=classic"><span>01</span>클래식</a>
+          <a href="../02-wedding-invite/?tpl=editorial"><span>02</span>에디토리얼</a>
+          <a href="../02-wedding-invite/?tpl=garden"><span>03</span>가든</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work" id="work-03" data-rv>
+      <figure class="work__fig"><img src="assets/img/shot-03.webp" alt="세무회계 SEO·웹블로그 홈페이지 화면" width="1000" height="1250" loading="lazy"></figure>
+      <div class="work__body">
+        <p class="work__no">03 / 06</p>
+        <h3>SEO·AEO·GEO 웹블로그<small>Search structure</small></h3>
+        <p class="work__lede">검색엔진과 AI 답변에 같이 잡히도록 만든 세무회계 샘플입니다. 예쁜 페이지만으로는 안 되는 부분을 구조로 채웠습니다.</p>
+        <ul class="work__list">
+          <li>구조화 데이터 5개 — AccountingService · FAQPage · Article 3편</li>
+          <li>llms.txt · sitemap.xml · 메타·OG·언어 태그</li>
+          <li>칼럼 3편과 고객용 SEO·AEO 진단 패널까지</li>
+        </ul>
+        <p class="work__meta">290,000원~ <span class="d">· 3~5일</span></p>
+        <div class="work__links">
+          <a href="../03-seo-webblog/">샘플 열기</a>
+          <a href="../03-seo-webblog/#post-1"><span>01</span>매입세액 공제</a>
+          <a href="../03-seo-webblog/#post-2"><span>02</span>법인 전환</a>
+          <a href="../03-seo-webblog/?insp=1"><span>03</span>진단 패널</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work work--flip" id="work-04" data-rv>
+      <figure class="work__fig"><img src="assets/img/shot-04.webp" alt="1초 견적서 A4 PDF 발급기 화면" width="1000" height="1250" loading="lazy"></figure>
+      <div class="work__body">
+        <p class="work__no">04 / 06</p>
+        <h3>1초 견적서 · A4 PDF<small>Quote builder</small></h3>
+        <p class="work__lede">현장에서 품목을 부르면 그 자리에서 견적서가 나옵니다. 인쇄를 눌러도 A4 한 장만 나오고, 그대로 PDF로 저장됩니다.</p>
+        <ul class="work__list">
+          <li>품목 행 추가·삭제, 부가세 별도·포함, 할인, 비고</li>
+          <li>한글 금액 병기, 직인 이미지, 견적번호 자동</li>
+          <li>업종 예시 3종 — 인테리어 · 디자인 외주 · 설비 시공</li>
+        </ul>
+        <p class="work__meta">149,000원~ <span class="d">· 2~3일</span></p>
+        <div class="work__links">
+          <a href="../04-quote-pdf/">샘플 열기</a>
+          <a href="../04-quote-pdf/?sample=interior"><span>01</span>인테리어</a>
+          <a href="../04-quote-pdf/?sample=design"><span>02</span>디자인 외주</a>
+          <a href="../04-quote-pdf/?sample=facility"><span>03</span>설비 시공</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work" id="work-05" data-rv>
+      <figure class="work__fig"><img src="assets/img/shot-05.webp" alt="블로그 초안 생성기 화면" width="1000" height="1250" loading="lazy"></figure>
+      <div class="work__body">
+        <p class="work__no">05 / 06</p>
+        <h3>블로그 초안 생성기<small>Blog automation</small></h3>
+        <p class="work__lede">사진 다섯 장과 키워드 한 줄. 제목 3안과 목차, 촬영 가이드가 먼저 나오고 사장님은 빈칸만 채웁니다. 두 시간 십 분이 5분이 됩니다.</p>
+        <ul class="work__list">
+          <li>제목 3안(검색·경험·정보형)과 AI 인용용 3줄 요약</li>
+          <li>사진 촬영 가이드 5컷, 발행 전 체크리스트, 통째 복사</li>
+          <li>입력값은 브라우저 밖으로 나가지 않습니다</li>
+        </ul>
+        <p class="work__meta">149,000원~ <span class="d">· 2~3일</span></p>
+        <div class="work__links">
+          <a href="../05-blog-auto/">샘플 열기</a>
+          <a href="../05-blog-auto/?ind=restaurant"><span>01</span>식당·카페</a>
+          <a href="../05-blog-auto/?ind=interior"><span>02</span>인테리어</a>
+          <a href="../05-blog-auto/?ind=workshop"><span>03</span>공방·클래스</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work work--flip" id="work-06" data-rv>
+      <figure class="work__fig"><img src="assets/img/shot-06.webp" alt="마진·정산 계산기 화면" width="1000" height="1250" loading="lazy"></figure>
+      <div class="work__body">
+        <p class="work__no">06 / 06</p>
+        <h3>마진·정산 계산기<small>Margin &amp; settlement</small></h3>
+        <p class="work__lede">19,900원에 팔면 얼마가 남는지, 채널을 바꾸면 얼마나 달라지는지 같은 종이에서 봅니다. 반품·광고비처럼 개당으로 고정할 수 없는 항목은 일부러 뺐습니다.</p>
+        <ul class="work__list">
+          <li>수수료·부가세·포장·택배·사입가를 넣은 순이익과 실질 마진율</li>
+          <li>목표 마진 역산, 손익분기 가격, 월 판매량 기준 정산</li>
+          <li>마진 10% 아래면 경고와 함께 손익분기 가격을 먼저</li>
+        </ul>
+        <p class="work__meta">149,000원~ <span class="d">· 2~3일</span></p>
+        <div class="work__links">
+          <a href="../06-margin-calc/">샘플 열기</a>
+          <a href="../06-margin-calc/?ch=market"><span>01</span>스마트스토어·G마켓</a>
+          <a href="../06-margin-calc/?ch=delivery"><span>02</span>배달앱</a>
+          <a href="../06-margin-calc/?ch=studio"><span>03</span>공방·자체몰</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec" id="offer">
+    <header class="sec__head">
+      <span class="sec__no">02</span>
+      <h2 class="sec__title">후기 대신, 가격으로 먼저.</h2>
+      <p class="sec__desc">이번 주에 만든 여섯 개를 그대로 쓰는 가격입니다. 스펙과 납기를 미리 적어 두었으니 상담에서 달라질 숫자가 없습니다. 부가세 포함 금액입니다.</p>
+    </header>
+
+    <div class="offers">
+      <div class="offer">
+        <p class="offer__no">OFFER 01</p>
+        <h3>원페이지 홈페이지</h3>
+        <p class="offer__price">99,000<small>원</small></p>
+        <p class="offer__lead">한 장짜리 홈페이지. 첫 화면부터 문의 버튼까지, 가게 소개에 필요한 것만.</p>
+        <p class="offer__days">48시간</p>
+        <dl>
+          <div><dt>포함</dt><dd>첫 화면 · 메뉴 · 후기 · 오시는 길 · 문의 버튼, 모바일 대응, 수정 1회, 도메인 연결 안내</dd></div>
+          <div><dt>준비물</dt><dd>상호, 사진 5장, 메뉴(시술) 목록, 영업시간·주소</dd></div>
+          <div><dt>빠짐</dt><dd class="out">도메인·호스팅(연 2만 원대), 사진 촬영, 로고 제작</dd></div>
+        </dl>
+      </div>
+
+      <div class="offer">
+        <p class="offer__no">OFFER 02</p>
+        <h3>자동화 미니 툴 1종</h3>
+        <p class="offer__price">149,000<small>원</small></p>
+        <p class="offer__lead">견적서 발급기 · 마진 계산기 · 블로그 초안 생성기 중 하나를 가게 숫자로 세팅합니다.</p>
+        <p class="offer__days">3일</p>
+        <dl>
+          <div><dt>포함</dt><dd>세 가지 중 1종, 품목·요율·문구를 실제 값으로 반영, 수정 1회</dd></div>
+          <div><dt>준비물</dt><dd>지금 쓰는 견적서나 정산 방식, 수수료 요율, 자주 쓰는 문구</dd></div>
+          <div><dt>빠짐</dt><dd class="out">카페24·스마트스토어 관리자 수정, 결제·정산 API 연동(별도 견적)</dd></div>
+        </dl>
+      </div>
+
+      <div class="offer">
+        <p class="offer__no">OFFER 03</p>
+        <h3>SEO·웹블로그 패키지</h3>
+        <p class="offer__price">249,000<small>원</small></p>
+        <p class="offer__lead">원페이지 위에 검색과 AI 답변에 잡히는 구조, 칼럼 3편, 진단 패널까지 얹습니다.</p>
+        <p class="offer__days">5일</p>
+        <dl>
+          <div><dt>포함</dt><dd>구조화 데이터 · sitemap.xml · llms.txt, 칼럼 3편, 서치콘솔 등록 안내, 수정 1회</dd></div>
+          <div><dt>준비물</dt><dd>업종·지역, 자주 받는 질문 10개, 이미 쓴 글</dd></div>
+          <div><dt>빠짐</dt><dd class="out">도메인·호스팅, 사진 촬영, 검색 순위 보장 — 순위는 보장하지 않습니다</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <p class="offers__note">납기는 준비물을 첫날 주신 기준이고 평일로 셉니다. 수정 1회는 납품 직후 같은 범위 안에서 한 번입니다. 범위를 넘는 요청은 따로 견적을 드리고, 추가 비용이 생기면 작업 전에 먼저 알려 드립니다. SEO 패키지 249,000원은 이번 주 샘플과 같은 고정 스펙(칼럼 3편·구조 데이터) 기준이고, 범위가 늘면 포트폴리오 기준가 290,000원부터로 안내합니다. <b>금액은 이 페이지에 적힌 그대로</b>이고, 후기를 조건으로 깎는 일은 하지 않습니다.</p>
+  </section>
+
+  <section class="sec" id="why">
+    <header class="sec__head">
+      <span class="sec__no">03</span>
+      <h2 class="sec__title">싸게 받는 게 아니라, 범위를 좁혔습니다.</h2>
+      <p class="sec__desc">가격이 낮은 이유를 적어 두는 게 서로 편합니다. 숨기면 나중에 어긋나니까요.</p>
+    </header>
+    <div class="why">
+      <div class="why__q" data-rv>
+        <p>상담에서 숫자가 달라지는 견적은, 처음부터 견적이 아니었던 것입니다.</p>
+        <p>그래서 이번 주에 만든 여섯 개는 스펙과 납기를 페이지에 먼저 적었습니다. 화면을 보고, 금액을 보고, 그다음에 연락하시면 됩니다.</p>
+      </div>
+      <div class="why__body" data-rv>
+        <p>여섯 개를 직접 만들어 두었기 때문에 <b>첫 화면부터 다시 그리지 않습니다.</b> 상호·사진·요율을 바꾸는 시간만 받습니다. 그게 9.9만 원이 48시간에 나오는 이유입니다.</p>
+        <p>지금은 후기가 아니라 실물로 말하려는 시기라 가격을 낮게 잡았습니다. 대신 범위는 이 페이지에 적힌 그대로이고, 그 밖의 일은 하지 않는다고 미리 말합니다.</p>
+        <div class="why__list">
+          <div><dt>만드는 사람</dt><dd>기획·카피·디자인·퍼블리싱·배포를 한 사람이 끝까지</dd></div>
+          <div><dt>연락</dt><dd>오픈채팅은 그날, 메일은 영업일 안에 회신</dd></div>
+          <div><dt>납품</dt><dd>링크로 먼저 보여 드리고, 수정 뒤 도메인에 연결</dd></div>
+          <div><dt>하지 않는 일</dt><dd>순위 보장, 후기·별점 대행, 사진 촬영 대행</dd></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="contact__kick">CONTACT</p>
+    <div class="contact__grid">
+      <div class="contact__body">
+        <h2>가게 이름과 업종, 하려는 일 한 줄이면 견적이 나옵니다.</h2>
+        <div class="contact__ways">
+          <a class="kbtn" href="https://open.kakao.com/o/sjAtvLKh" target="_blank" rel="noopener">카카오톡 오픈채팅 열기<span class="kbtn__arw" aria-hidden="true">→</span></a>
+        </div>
+        <a class="contact__mail" href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com<span>MAIL</span></a>
+        <p class="contact__note">보고 싶은 항목 번호를 함께 적어 주시면 더 빠릅니다. 예: "원페이지 01번, 카페, 다음 주까지".</p>
+      </div>
+      <figure class="qrcard">
+        <img src="../assets/kakao-openchat-qr.jpg" alt="카카오톡 오픈채팅으로 연결되는 QR 코드" width="800" height="800" loading="lazy">
+        <figcaption class="qrcard__cap">휴대폰 카메라로 스캔<br>open.kakao.com/o/sjAtvLKh</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__base">
+    <span>LONGSNAKE · 구리 / 서울 · 2026</span>
+    <span>샘플 페이지입니다 · 사진은 생성 이미지, 상호와 후기는 예시</span>
+    <a href="mailto:longsnake.kr@gmail.com">longsnake.kr@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce){ document.querySelectorAll("[data-rv]").forEach(function(e){ e.classList.add("on"); }); return; }
+  if (!("IntersectionObserver" in window)){ document.querySelectorAll("[data-rv]").forEach(function(e){ e.classList.add("on"); }); return; }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } });
+  }, {rootMargin:"0px 0px -8% 0px", threshold:0.08});
+  document.querySelectorAll("[data-rv]").forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>

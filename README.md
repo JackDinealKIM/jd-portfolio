@@ -11,6 +11,8 @@
 - 샘플 03: https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/
 - 샘플 04: https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/
 - 샘플 05: https://jackdinealkim.github.io/jd-portfolio/05-blog-auto/
+- 샘플 06: https://jackdinealkim.github.io/jd-portfolio/06-margin-calc/
+- 주간 아카이브(이번 주 6종 + 빠른 납품 3단): https://jackdinealkim.github.io/jd-portfolio/07-weekly-offer/
 - 견적서 예시 바로 열기: https://jackdinealkim.github.io/jd-portfolio/04-quote-pdf/?sample=interior
 - SEO 진단 패널: https://jackdinealkim.github.io/jd-portfolio/03-seo-webblog/?insp=1
 - 문의: [카카오톡 오픈채팅](https://open.kakao.com/o/sjAtvLKh) · longsnake.kr@gmail.com
@@ -25,6 +27,8 @@
 | 03 | SEO·AEO·GEO + 웹블로그 홈페이지 | 세무·절세 컨설팅 「윤슬 세무회계」. 구조화 데이터 5개(AccountingService·FAQPage·Article×3), llms.txt·sitemap.xml, 실제 칼럼 3편, 고객용 SEO·AEO 진단 패널. | [`03-seo-webblog/`](03-seo-webblog/) |
 | 04 | 1초 견적서 · A4 PDF 발급기 | 상호·품목을 입력하면 A4 견적서가 실시간으로 완성. 품목 행 추가/삭제, 부가세 별도·포함, 할인, 비고, 직인 PNG, 한글 금액 표기. 인쇄 시 A4 한 장만 출력되고 PDF로 저장됩니다. 업종 예시 3종(인테리어·디자인 외주·설비 시공). | [`04-quote-pdf/`](04-quote-pdf/) |
 | 05 | 블로그 초안 생성기 (4업종) | 업종+키워드 한 줄로 제목 3안(검색·경험·정보형), AEO 3줄 요약, 소제목 목차, 사진 촬영 가이드 5컷, 발행 전 체크리스트를 생성·복사. 대괄호 빈칸은 매장 정보로 채우는 자리이고, 입력값은 전송·저장하지 않습니다. | [`05-blog-auto/`](05-blog-auto/) |
+| 06 | 마진·정산 계산기 (채널 3종) | 스마트스토어·G마켓 / 배달앱 / 공방·자체몰의 수수료·부가세·포장·택배·사입가를 넣으면 순이익과 실질 마진율이 나옵니다. 목표 마진 역산, 손익분기 가격, 월 정산, A4 인쇄 1장. 반품·광고비처럼 개당으로 고정할 수 없는 항목은 뺐고, 뺀 항목을 페이지에 적었습니다. | [`06-margin-calc/`](06-margin-calc/) |
+| 07 | 주간 아카이브 & 빠른 납품 3단 | 2026.11.24~28에 만든 여섯 개(01~06)를 한 페이지에 모은 아카이브. 각 항목의 실제 스크린샷과 링크, 그리고 원페이지 99,000원 48시간 / 미니 툴 149,000원 3일 / SEO·웹블로그 249,000원 5일의 고정 스펙·준비물·빠지는 항목. | [`07-weekly-offer/`](07-weekly-offer/) |
 
 업종별 직접 링크: [`?ind=cafe`](01-store-landing/?ind=cafe) · [`?ind=interior`](01-store-landing/?ind=interior) · [`?ind=clay`](01-store-landing/?ind=clay)
 
@@ -45,6 +49,8 @@
 | 03 | SEO·AEO·GEO + 웹블로그 홈페이지 | 검색 구조(구조화 데이터·llms.txt·사이트맵) + 칼럼 3편 + 진단 패널 · 290,000원~ | 3~5일 |
 | 04 | 견적서·자동화 툴 | 견적서·거래명세서 발급기, 대시보드, 단일 기능 툴 · 149,000원~ | 2~3일 |
 | 05 | 블로그 자동화 세팅 | 업종 맞춤 제목·목차 템플릿, 초안 생성기, 촬영 목록, 발행 순서표, 수정 1회 · 149,000원~ | 2~3일 |
+| 06 | 마진·정산 계산기 | 채널 요율 반영, 목표 마진 역산, 손익분기, 월 정산, A4 인쇄 · 149,000원~ | 2~3일 |
+| 07 | 주간 아카이브 & 빠른 납품 3단 | 위 여섯 개를 그대로 쓰는 고정 스펙 — 원페이지 99,000원 48시간 / 미니 툴 149,000원 3일 / SEO·웹블로그 249,000원 5일 | 1~5일 |
 
 ## 구성
 
@@ -88,6 +94,17 @@ jd-portfolio/
 │   │   ├── img/*.webp          # 실사 2장 + 포트폴리오 썸네일 3장
 │   │   └── fonts/              # Pretendard 2종 · 세리프 · 모노 서브셋 (woff2)
 │   └── README.md
+├── 06-margin-calc/
+│   ├── index.html              # 마진·정산 계산기 (채널 3종 · ?ch= · A4 인쇄)
+│   ├── assets/
+│   │   ├── img/*.webp          # 실사 2장 + 썸네일 3장
+│   │   └── fonts/              # 한글 산세리프·세리프·모노 서브셋 (woff2)
+│   └── README.md
+├── 07-weekly-offer/
+│   ├── index.html              # 이번 주 6종 아카이브 + 빠른 납품 3단 오퍼
+│   ├── assets/
+│   │   ├── img/shot-01~06.webp # 01~06 샘플 실제 스크린샷 (1000×1250)
+│   │   └── fonts/              # 한글 산세리프·세리프·모노 서브셋 (woff2)
 └── README.md
 ```
 
